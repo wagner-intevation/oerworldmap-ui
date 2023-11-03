@@ -153,6 +153,8 @@ class Header extends React.Component {
               {translate('Take a tour')}
             </a>
           )}
+
+          <span style={{color: '#ffcd35', marginLeft: '20pt'}}>This is a demo!</span>
         </div>
 
         <button
