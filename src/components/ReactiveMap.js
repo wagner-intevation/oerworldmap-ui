@@ -194,19 +194,40 @@ class Map extends React.Component {
         },
       })
 
-      // Hack to use Mapbox studio styles with local data (source)
-      const allLayers = this.map.getStyle().layers
-      pointsLayers.forEach((layer) => {
-        const pointsLayer = allLayers.find(l => l.id === layer)
-        delete pointsLayer['source-layer']
-        this.map.removeLayer(layer)
-        pointsLayer.source = 'pointsSource'
-        pointsLayer.paint['circle-opacity'] = 1
-        pointsLayer.paint['circle-stroke-opacity'] = 1
-        pointsLayer.paint['circle-radius'] = this.initialRadius
+      this.map.addLayer({
+        id: 'points',
+        type: 'circle',
+        source: 'pointsSource',
+        paint: {
+          'circle-radius': this.initialRadius,
+          'circle-color': '#ff9933',
+          'circle-stroke-width': 1,
+          'circle-stroke-color': 'white',
+        },
+      })
 
-        this.map.addLayer(pointsLayer)
-        this.map.setLayoutProperty(layer, 'visibility', 'visible')
+      this.map.addLayer({
+        id: 'points-hover',
+        type: 'circle',
+        source: 'pointsSource',
+        paint: {
+          'circle-radius': this.initialRadius,
+          'circle-color': '#ffd8b2',
+          'circle-stroke-width': 1,
+          'circle-stroke-color': 'white',
+        },
+      })
+
+      this.map.addLayer({
+        id: 'points-select',
+        type: 'circle',
+        source: 'pointsSource',
+        paint: {
+          'circle-radius': this.initialRadius,
+          'circle-color': '#f93',
+          'circle-stroke-width': 1,
+          'circle-stroke-color': 'white',
+        },
       })
 
       this.map.addLayer({
@@ -231,6 +252,23 @@ class Map extends React.Component {
           'circle-stroke-width': 1,
           'circle-color': '#f93',
         },
+      })
+
+      this.isReady = true
+
+      // Hack to use Mapbox studio styles with local data (source)
+      const allLayers = this.map.getStyle().layers
+      pointsLayers.forEach((layer) => {
+        const pointsLayer = allLayers.find(l => l.id === layer)
+        delete pointsLayer['source-layer']
+        this.map.removeLayer(layer)
+        pointsLayer.source = 'pointsSource'
+        pointsLayer.paint['circle-opacity'] = 1
+        pointsLayer.paint['circle-stroke-opacity'] = 1
+        pointsLayer.paint['circle-radius'] = this.initialRadius
+
+        this.map.addLayer(pointsLayer)
+        this.map.setLayoutProperty(layer, 'visibility', 'visible')
       })
 
       // Clone Regions layer and set the style of countries-inactive
@@ -431,11 +469,11 @@ class Map extends React.Component {
       const hoveredRegionsInactive = this.map.queryRenderedFeatures(e.point, { layers: ['regions-inactive'] })
 
       const currentCountry = (hoveredCountries.length
-        && hoveredCountries[0].properties.iso_a2) || null
+        && hoveredCountries[0].properties.iso_3166_1) || null
       const currentRegion = (hoveredRegions.length
-        && hoveredRegions[0].properties.code_hasc) || null
+        && hoveredRegions[0].properties['HASC_1']) || null
       const currentRegionInactive = (hoveredRegionsInactive.length
-        && hoveredRegionsInactive[0].properties.code_hasc) || null
+        && hoveredRegionsInactive[0].properties['HASC_1']) || null
 
       if (!currentCountry && !hoveredPoints.length) {
         // Water since there is no country
@@ -657,23 +695,23 @@ class Map extends React.Component {
 
   updateActiveCountry(iso3166, region) {
     if (region) {
-      this.map.setFilter('regions-inactive', ['==', 'iso_a2', iso3166])
-      this.map.setFilter('countries-inactive', ['!=', 'iso_a2', iso3166])
-      this.map.setFilter('Regions', ['==', 'code_hasc', `${iso3166}.${region}`])
+      this.map.setFilter('regions-inactive', ['==', 'iso_3166_1', iso3166])
+      this.map.setFilter('countries-inactive', ['!=', 'iso_3166_1', iso3166])
+      this.map.setFilter('Regions', ['==', 'HASC_1', `${iso3166}.${region}`])
       this.map.once('moveend', () => {
         this.map.setPaintProperty('countries', 'fill-opacity', 0)
       })
     } else if (iso3166) {
-      this.map.setFilter('countries-inactive', ['!=', 'iso_a2', iso3166])
-      this.map.setFilter('Regions', ['==', 'iso_a2', iso3166])
-      this.map.setFilter('regions-inactive', ['==', 'code_hasc', 'null'])
+      this.map.setFilter('countries-inactive', ['!=', 'iso_3166_1', iso3166])
+      this.map.setFilter('Regions', ['==', 'iso_3166_1', iso3166])
+      this.map.setFilter('regions-inactive', ['==', 'HASC_1', 'null'])
       this.map.once('moveend', () => {
         this.map.setPaintProperty('countries', 'fill-opacity', 0)
       })
     } else {
-      this.map.setFilter('countries-inactive', ['!has', 'iso_a2'])
-      this.map.setFilter('Regions', ['!has', 'iso_a2'])
-      this.map.setFilter('regions-inactive', ['==', 'code_hasc', 'null'])
+      this.map.setFilter('countries-inactive', ['!has', 'iso_3166_1'])
+      this.map.setFilter('Regions', ['!has', 'iso_3166_1'])
+      this.map.setFilter('regions-inactive', ['==', 'HASC_1', 'null'])
       this.map.setPaintProperty('countries', 'fill-opacity', 1)
     }
   }
@@ -704,7 +742,7 @@ class Map extends React.Component {
         } else {
           const coutryFeatures = this.map.queryRenderedFeatures({
             layers: ['countries'],
-            filter: ['in', 'iso_a2', iso3166],
+            filter: ['in', 'iso_3166_1', iso3166],
           })
           if (coutryFeatures.length) {
             const sumCoords = []
@@ -789,7 +827,7 @@ class Map extends React.Component {
         .concat('rgba(255, 255, 255)')
         .reverse()
       const property = aggregations['sterms#feature.properties.location.address.addressRegion']
-        ? 'code_hasc' : 'iso_a2'
+        ? 'HASC_1' : 'iso_3166_1'
       const layer = aggregations['sterms#feature.properties.location.address.addressRegion']
         ? 'Regions' : 'countries'
 
@@ -876,8 +914,8 @@ class Map extends React.Component {
 
     const { emitter } = this.props
 
-    if (features[0].properties.iso_a2 !== '-99') {
-      emitter.emit('navigate', `/country/${features[0].properties.iso_a2.toLowerCase()}${window.location.search}`)
+    if (features[0].properties.iso_3166_1 !== '-99') {
+      emitter.emit('navigate', `/country/${features[0].properties.iso_3166_1.toLowerCase()}${window.location.search}`)
     }
   }
 
@@ -885,8 +923,8 @@ class Map extends React.Component {
     if (this.popup && this.popup.isOpen()) return
 
     const { emitter } = this.props
-    const [country, region] = features[0].properties.code_hasc.toLowerCase().split('.')
-    if (features[0].properties.iso_a2 !== '-99') {
+    const [country, region] = features[0].properties['HASC_1'].toLowerCase().split('.')
+    if (features[0].properties.iso_3166_1 !== '-99') {
       emitter.emit('navigate', `/country/${country}/${region}${window.location.search}`)
     }
   }
