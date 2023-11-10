@@ -3,8 +3,6 @@ import PropTypes from 'prop-types'
 import Select from 'react-select'
 import fetch from 'isomorphic-fetch'
 
-import 'react-select/dist/react-select.css'
-
 import withFormData from './withFormData'
 import withConfig from '../withConfig'
 import { objectMap } from '../../common'
