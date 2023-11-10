@@ -86,7 +86,7 @@
     "cookie-parser": "^1.4.3",
     "d3": "^5.15.0",
     "deepmerge": "^4.2.2",
-    "dotenv": "^8.2.0",
+    "dotenv": "^16.3.1",
     "es6-promise": "^4.2.8",
     "express": "^4.17.0",
     "express-useragent": "^1.0.13",
