@@ -2,12 +2,14 @@ import path from 'path'
 import webpack from 'webpack'
 import merge from 'webpack-merge'
 import MiniCssExtractPlugin from 'mini-css-extract-plugin'
-import OptimizeCSSAssetsPlugin from 'optimize-css-assets-webpack-plugin'
-import safe from 'postcss-safe-parser'
-import cssnano from 'cssnano'
+import CssMinimizerPlugin from 'css-minimizer-webpack-plugin'
 import CopyWebpackPlugin from 'copy-webpack-plugin'
+import dotenv from 'dotenv'
+console.log(JSON.stringify(dotenv.config().parsed))
+console.log((dotenv.config()))
+console.log(process.env.SERVER_HOST)
 
-import config, { apiConfig } from './config'
+//import config, { apiConfig } from './config.mjs'
 
 const { NODE_ENV } = process.env
 const isProduction = NODE_ENV === 'production'
@@ -37,13 +39,15 @@ const baseConfig = {
   },
   output: {
     path: path.join(__dirname, directory),
-    publicPath: !isProduction ? `http://${config.host}:${config.port}/`
-      : `${apiConfig.scheme}://${apiConfig.host}`
-        .concat(apiConfig.port ? `:${apiConfig.port}/` : '/'),
+    publicPath: !isProduction ? `http://${process.env.SERVER_HOST}:${process.env.SERVER_PORT}/`
+      : `${process.env.API_SCHEME}://${process.env.API_HOST}`
+        .concat(process.env.API_PORT ? `:${process.env.API_PORT}/` : '/'),
   },
   plugins: [
     new webpack.ProgressPlugin(),
-    new webpack.IgnorePlugin(/canvas/),
+    new webpack.IgnorePlugin({
+      resourceRegExp: /canvas/
+    }),
   ],
 }
 
@@ -112,15 +116,7 @@ const configServer = merge(baseConfig, {
 if (isProduction) {
   // Minimize all CSS
   configServer.plugins.push(
-    new OptimizeCSSAssetsPlugin({
-      cssProcessor: cssnano,
-      cssProcessorOptions: {
-        parser: safe,
-        discardComments: {
-          removeAll: true,
-        },
-      },
-    }),
+    new CssMinimizerPlugin(),
   )
 }
 

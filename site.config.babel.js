@@ -2,9 +2,7 @@ import path from 'path'
 import webpack from 'webpack'
 import merge from 'webpack-merge'
 import MiniCssExtractPlugin from 'mini-css-extract-plugin'
-import OptimizeCSSAssetsPlugin from 'optimize-css-assets-webpack-plugin'
-import safe from 'postcss-safe-parser'
-import cssnano from 'cssnano'
+import CssMinimizerPlugin from 'css-minimizer-webpack-plugin'
 import i18ns from './src/i18ns'
 
 const ENV = process.env.NODE_ENV
@@ -66,13 +64,7 @@ if (ENV === 'production') {
       new MiniCssExtractPlugin({
         filename: "assets/css/styles.css"
       }),
-      new OptimizeCSSAssetsPlugin({
-        cssProcessor: cssnano,
-        cssProcessorOptions: {
-          parser: safe,
-          discardComments: { removeAll: true }
-        }
-      })
+      new CssMinimizerPlugin(),
     ],
     mode: 'production',
     module: {
