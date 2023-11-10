@@ -4,12 +4,6 @@ import merge from 'webpack-merge'
 import MiniCssExtractPlugin from 'mini-css-extract-plugin'
 import CssMinimizerPlugin from 'css-minimizer-webpack-plugin'
 import CopyWebpackPlugin from 'copy-webpack-plugin'
-import dotenv from 'dotenv'
-console.log(JSON.stringify(dotenv.config().parsed))
-console.log((dotenv.config()))
-console.log(process.env.SERVER_HOST)
-
-//import config, { apiConfig } from './config.mjs'
 
 const { NODE_ENV } = process.env
 const isProduction = NODE_ENV === 'production'
