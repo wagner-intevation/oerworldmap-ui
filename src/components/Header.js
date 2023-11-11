@@ -12,15 +12,22 @@ import ConceptBlock from './ConceptBlock'
 import Icon from './Icon'
 import withUser from './withUser'
 
-import { hasTopConcept as organizationsConcepts } from '../json/organizations.json'
-import { hasTopConcept as personsConcepts } from '../json/persons.json'
-import { hasTopConcept as servicesConcepts } from '../json/services.json'
-import { hasTopConcept as publicationsConcepts } from '../json/publications.json'
-import { hasTopConcept as policyTypesConcepts } from '../json/policyTypes.json'
-import { hasTopConcept as projectsConcepts } from '../json/projects.json'
+import organizations from '../json/organizations.json'
+import persons from '../json/persons.json'
+import services from '../json/services.json'
+import publications from '../json/publications.json'
+import policyTypes from '../json/policyTypes.json'
+import projects from '../json/projects.json'
 
 import '../styles/components/Header.pcss'
 import '../styles/helpers.pcss'
+
+const organizationsConcepts = organizations.hasTopConcept
+const personsConcepts = persons.hasTopConcept
+const servicesConcepts = services.hasTopConcept
+const publicationsConcepts = publications.hasTopConcept
+const policyTypesConcepts = policyTypes.hasTopConcept
+const projectsConcepts = projects.hasTopConcept
 
 class Header extends React.Component {
   constructor(props) {
