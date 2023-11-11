@@ -4,7 +4,7 @@ import Markdown from 'markdown-to-jsx'
 import {
   Tab, Tabs, TabList, TabPanel,
 } from 'react-tabs'
-import urlTemplate from 'url-template'
+import { parseTemplate } from 'url-template'
 import ResourceImage from './ResourceImage'
 
 import withI18n from './withI18n'
@@ -671,7 +671,7 @@ const WebPageView = ({
             <Block title={translate(`${about['@type']}.additionalType`)}>
               {about.additionalType.map(type => (
                 <React.Fragment key={type['@id']}>
-                  <Link href={urlTemplate.parse('/resource/?filter.about.additionalType.@id=["{@id}"]').expand(type)}>
+                  <Link href={parseTemplate('/resource/?filter.about.additionalType.@id=["{@id}"]').expand(type)}>
                     {translate(type.name)}
                   </Link>
                   <br />
@@ -684,7 +684,7 @@ const WebPageView = ({
             <Block title={translate(`${about['@type']}.scope`)}>
               {about.scope.map(scope => (
                 <React.Fragment key={scope['@id']}>
-                  <Link href={urlTemplate.parse('/resource/?filter.about.scope.@id=["{@id}"]').expand(scope)}>
+                  <Link href={parseTemplate('/resource/?filter.about.scope.@id=["{@id}"]').expand(scope)}>
                     {translate(scope.name)}
                   </Link>
                   <br />

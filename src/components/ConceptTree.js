@@ -1,6 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import urlTemplate from 'url-template'
+import { parseTemplate } from 'url-template'
 
 import withI18n from './withI18n'
 import Icon from './Icon'
@@ -31,7 +31,7 @@ const ConceptTree = ({
         key={concept['@id']}
         className={!nested && (concept.narrower && concept.narrower.length > 0) ? 'expandable' : ''}
       >
-        <Link className="item" href={urlTemplate.parse(linkTemplate).expand(concept)}>
+        <Link className="item" href={parseTemplate(linkTemplate).expand(concept)}>
           {!noIcon
             && <Icon type={concept['@type']} />
           }

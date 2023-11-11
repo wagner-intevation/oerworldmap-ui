@@ -1,6 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import urlTemplate from 'url-template'
+import { parseTemplate } from 'url-template'
 
 import Link from './Link'
 import Icon from './Icon'
@@ -20,7 +20,7 @@ const ConceptBlock = ({
       <ul className="linedList border-bottom">
         {conceptScheme.map(concept => (
           <li key={concept['@id']}>
-            <Link href={urlTemplate.parse(linkTemplate).expand(concept)}>
+            <Link href={parseTemplate(linkTemplate).expand(concept)}>
               {translate(concept.name)}
             </Link>
           </li>

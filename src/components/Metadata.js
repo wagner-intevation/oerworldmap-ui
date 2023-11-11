@@ -1,6 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import urlTemplate from 'url-template'
+import { parseTemplate } from 'url-template'
 import withI18n from './withI18n'
 import withUser from './withUser'
 
@@ -22,7 +22,7 @@ const Metadata = ({
         {about.additionalType.map((type, i) => (
           <React.Fragment key={type['@id']}>
             {!!i && ', '}
-            <Link href={urlTemplate.parse('/resource/?filter.about.additionalType.@id=["{@id}"]').expand(type)}>
+            <Link href={parseTemplate('/resource/?filter.about.additionalType.@id=["{@id}"]').expand(type)}>
               {translate(type.name)}
             </Link>
           </React.Fragment>

@@ -122,7 +122,7 @@
     "remove-markdown": "^0.3.0",
     "simplemde": "^1.11.2",
     "source-sans-pro": "^3.6.0",
-    "url-template": "^2.0.8",
+    "url-template": "^3.1.0",
     "webpack": "^5.89.0",
     "webpack-dev-middleware": "^6.1.1",
     "webpack-dev-server": "^4.15.1",

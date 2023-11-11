@@ -1,6 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import urlTemplate from 'url-template'
+import { parseTemplate } from 'url-template'
 
 import Icon from './Icon'
 import Link from './Link'
@@ -29,7 +29,7 @@ const ResourcePreview = ({ translate, about }) => (
               {about.additionalType.map((type, i) => (
                 <React.Fragment key={type['@id']}>
                   {!!i && ', '}
-                  <Link href={urlTemplate.parse('/resource/?filter.about.additionalType.@id={@id}').expand(type)}>
+                  <Link href={parseTemplate('/resource/?filter.about.additionalType.@id={@id}').expand(type)}>
                     {translate(type.name)}
                   </Link>
                 </React.Fragment>

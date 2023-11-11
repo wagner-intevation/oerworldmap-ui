@@ -1,6 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import urlTemplate from 'url-template'
+import { parseTemplate } from 'url-template'
 import removeMd from 'remove-markdown'
 
 import Icon from './Icon'
@@ -27,7 +27,7 @@ const ItemList = ({
           ) : (
             <Icon type={listItem['@type']} />
           )}
-          <Link href={urlTemplate.parse(linkTemplate).expand(listItem)}>
+          <Link href={parseTemplate(linkTemplate).expand(listItem)}>
             <span>
               {translate(listItem.name) || translate(listItem['@id'])}
               {listItem.alternateName ? ` (${translate(listItem.alternateName)})` : ''}
