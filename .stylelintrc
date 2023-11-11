@@ -22,6 +22,7 @@
     ],
     "custom-property-empty-line-before": null,
     "no-descending-specificity" : null,
-    "font-family-no-missing-generic-family-keyword": null
+    "font-family-no-missing-generic-family-keyword": null,
+    "selector-class-pattern": null
   }
 }
