@@ -1,5 +1,4 @@
 import React from 'react'
-import { storiesOf } from '@storybook/react'
 
 import ConceptTree from '../src/components/ConceptTree'
 import WithStrings from './WithStrings'
@@ -689,8 +688,14 @@ const webPage = {
   "dateModified" : "2017-11-14T22:58:15.517+01:00",
   "@id" : "urn:uuid:4fc8d0c4-58c8-435c-94db-c17f799eed7a.about"
 }
-storiesOf('ConceptTree', module)
-  .add('Render', () => (
+
+export default {
+  title: "ConceptTree",
+  component: ConceptTree
+}
+
+export const Default = {
+  render: () =>
     <WithStrings lang="en">
       <ConceptTree
         concepts={require('../src/json/esc.json').hasTopConcept}
@@ -699,4 +704,4 @@ storiesOf('ConceptTree', module)
         linkTemplate="/resource/?filter.about.about.@id={@id}"
       />
     </WithStrings>
-  ))
+}

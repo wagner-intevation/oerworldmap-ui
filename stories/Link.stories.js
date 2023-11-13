@@ -1,15 +1,19 @@
 import React from 'react'
-import { storiesOf } from '@storybook/react'
 
 import Link from '../src/components/Link'
 import mock from '../test/helpers/mock'
 import EmittProvider from '../src/components/EmittProvider'
 
-storiesOf('Link', module)
-  .add('Render', () => (
+export default {
+  title: "Link",
+  component: Link
+}
+
+export const Default = {
+  render: () =>
     <EmittProvider emitter={mock.emitter}>
       <Link href="http://test.de">
         Test Link
       </Link>
     </EmittProvider>
-  ))
+}

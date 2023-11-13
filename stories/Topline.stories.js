@@ -1,5 +1,4 @@
 import React from 'react'
-import { storiesOf } from '@storybook/react'
 
 import Topline from '../src/components/Topline'
 import WithStrings from './WithStrings'
@@ -5101,11 +5100,16 @@ const about = {
   ]
 }
 
-storiesOf('Topline', module)
-  .add('Render', () => (
+export default {
+  title: "Topline",
+  component: Topline
+}
+
+export const Default = {
+  render: () =>
     <WithStrings lang="en">
       <Topline
         about={about}
       />
     </WithStrings>
-  ))
+}

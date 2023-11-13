@@ -1,5 +1,6 @@
 import path from 'path'
 import webpack from 'webpack'
+import MiniCssExtractPlugin from 'mini-css-extract-plugin'
 import i18ns from '../src/i18ns'
 
 import { mapboxConfig } from '../config'
@@ -9,16 +10,13 @@ module.exports = {
     new webpack.DefinePlugin({
       mapboxConfig: JSON.stringify(mapboxConfig),
       i18ns: JSON.stringify(i18ns)
-    })
+    }),
+    new MiniCssExtractPlugin({
+      filename: './public/styles.css',
+    }),
   ],
   module: {
     rules: [
-      {
-        test: /\.m?js$/,
-        exclude: /node_modules/,
-        loaders: [require.resolve("@storybook/addon-storysource/loader")],
-        enforce: "pre"
-      },
       {
         test: /\.(css|pcss)$/,
         include: [
@@ -30,7 +28,7 @@ module.exports = {
           path.resolve(__dirname, '..')
         ],
         use: [
-          'style-loader',
+          MiniCssExtractPlugin.loader,
           {
             loader: 'css-loader',
             options: {

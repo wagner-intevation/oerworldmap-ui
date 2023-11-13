@@ -1,14 +1,18 @@
 import React from 'react'
-import { storiesOf } from '@storybook/react'
 
 import Feedback from '../src/components/Feedback'
 import WithStrings from './WithStrings'
 
-storiesOf('Feedback', module)
-  .add('Render', () => (
+export default {
+  title: "Feedback",
+  component: Feedback
+}
+
+export const Default = {
+  render: () =>
     <WithStrings lang="en">
       <Feedback>
         Testing
       </Feedback>
     </WithStrings>
-  ))
+}

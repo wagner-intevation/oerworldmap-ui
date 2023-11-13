@@ -1,5 +1,4 @@
 import React from 'react'
-import { storiesOf } from '@storybook/react'
 
 import ItemList from '../src/components/ItemList'
 import WithStrings from './WithStrings'
@@ -1946,11 +1945,16 @@ const listItems = [
   }
 ]
 
-storiesOf('ItemList', module)
-  .add('Render', () => (
+export default {
+  title: "ItemList",
+  component: ItemList
+}
+
+export const Default = {
+  render: () =>
     <WithStrings lang="en">
       <ItemList
         listItems={listItems}
       />
     </WithStrings>
-  ))
+}

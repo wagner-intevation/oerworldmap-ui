@@ -1,5 +1,4 @@
 import React from 'react'
-import { storiesOf } from '@storybook/react'
 
 import Feed from '../src/components/Feed'
 import WithStrings from './WithStrings'
@@ -1945,11 +1944,17 @@ const member = [
   }
 ]
 
-storiesOf('Feed', module)
-  .add('Render', () => (
+export default {
+  title: "Feed",
+  component: Feed
+}
+
+export const Default = {
+  render: () =>
     <WithStrings lang="en">
       <Feed
         member={member}
       />
     </WithStrings>
-  ))
+}
+

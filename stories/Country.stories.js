@@ -1,5 +1,4 @@
 import React from 'react'
-import { storiesOf } from '@storybook/react'
 
 import Country from '../src/components/Country'
 import WithStrings from './WithStrings'
@@ -12706,12 +12705,17 @@ const countryData = {
   "key": "DE"
 }
 
-storiesOf('Country', module)
-  .add('Render', () => (
+export default {
+  title: "Country",
+  component: Country
+}
+
+export const Default = {
+  render: () =>
     <WithStrings lang="en">
       <Country
         countryData={countryData}
         iso3166="de"
       />
     </WithStrings>
-  ))
+}

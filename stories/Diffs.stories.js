@@ -1,5 +1,4 @@
 import React from 'react'
-import { storiesOf } from '@storybook/react'
 
 import Lighthouses from '../src/components/Lighthouses'
 import WithStrings from './WithStrings'
@@ -46,9 +45,13 @@ const lighthouses = [
   }
 ]
 
+export default {
+  title: "Lighthouses",
+  component: Lighthouses
+}
 
-storiesOf('Lighthouses', module)
-  .add('Render', () => (
+export const Default = {
+  render: () =>
     <WithStrings lang="en">
       <Lighthouses
         lighthouses={lighthouses}
@@ -56,4 +59,4 @@ storiesOf('Lighthouses', module)
         about={about}
       />
     </WithStrings>
-  ))
+}

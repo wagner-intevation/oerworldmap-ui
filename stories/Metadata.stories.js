@@ -1,5 +1,4 @@
 import React from 'react'
-import { storiesOf } from '@storybook/react'
 
 import Metadata from '../src/components/Metadata'
 import WithStrings from './WithStrings'
@@ -23,8 +22,13 @@ aboutWithAdditional.additionalType = [ {
   } ]
 }]
 
-const story = storiesOf('Metadata', module)
-  .add('Render', () => (
+export default {
+  title: "Metadata",
+  component: Metadata
+}
+
+export const Default = {
+  render: () =>
     <WithStrings lang="en">
       <Metadata
         type={about["@type"]}
@@ -32,8 +36,10 @@ const story = storiesOf('Metadata', module)
         dateModified="2018-02-22T16:26:27.753"
       />
     </WithStrings>
-  ))
-  .add('With user', () => (
+}
+
+export const WithUser = {
+  render: () =>
     <WithStrings lang="en">
       <Metadata
         type={about["@type"]}
@@ -42,14 +48,15 @@ const story = storiesOf('Metadata', module)
         user={user}
       />
     </WithStrings>
-  ))
+}
 
-story.add('With additionalType', () => (
-  <WithStrings lang="en">
-    <Metadata
-      type={aboutWithAdditional["@type"]}
-      about={aboutWithAdditional}
-      dateModified="2018-02-22T16:26:27.753"
-    />
-  </WithStrings>
-))
+export const WithAdditionalType = {
+  render: () =>
+    <WithStrings lang="en">
+      <Metadata
+        type={aboutWithAdditional["@type"]}
+        about={aboutWithAdditional}
+        dateModified="2018-02-22T16:26:27.753"
+      />
+    </WithStrings>
+}

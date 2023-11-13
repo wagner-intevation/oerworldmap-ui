@@ -1,5 +1,4 @@
 import React from 'react'
-import { storiesOf } from '@storybook/react'
 
 import Comments from '../src/components/Comments'
 import WithStrings from './WithStrings'
@@ -25,13 +24,18 @@ const comments = [
   }
 ]
 
-storiesOf('Comments', module)
-  .add('Render', () => (
-    <WithStrings lang="en">
-      <Comments
-        comments={comments}
-        user={user}
-        schema={mock.schema}
-      />
-    </WithStrings>
-  ))
+export default {
+  title: "Comments",
+  component: Comments
+}
+
+export const Default = {
+  render: () =>
+  <WithStrings lang="en">
+    <Comments
+      comments={comments}
+      user={user}
+      schema={mock.schema}
+    />
+  </WithStrings>
+}

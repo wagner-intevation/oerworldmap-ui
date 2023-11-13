@@ -1,5 +1,4 @@
 import React from 'react'
-import { storiesOf } from '@storybook/react'
 
 import SocialLinks from '../src/components/SocialLinks'
 import WithStrings from './WithStrings'
@@ -26,9 +25,14 @@ const links = [
   'pinterest'
 ]
 
-storiesOf('SocialLinks', module)
-  .add('Render', () => (
+export default {
+  title: "SocialLinks",
+  component: SocialLinks
+}
+
+export const Default = {
+  render: () =>
     <WithStrings lang="en">
       <SocialLinks links={links} />
     </WithStrings>
-  ))
+}

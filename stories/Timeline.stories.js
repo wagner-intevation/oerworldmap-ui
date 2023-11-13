@@ -1,5 +1,4 @@
 import React from 'react'
-import { storiesOf } from '@storybook/react'
 
 import Timeline from '../src/components/Timeline'
 import WithStrings from './WithStrings'
@@ -5274,8 +5273,13 @@ const entries = [
   }
 ]
 
-storiesOf('Timeline', module)
-  .add('Render', () => (
+export default {
+  title: "Timeline",
+  component: Timeline
+}
+
+export const Default = {
+  render: () =>
     <WithStrings lang="en">
       <EmittProvider emitter={mock.emitter}>
         <Timeline
@@ -5283,4 +5287,4 @@ storiesOf('Timeline', module)
         />
       </EmittProvider>
     </WithStrings>
-  ))
+}

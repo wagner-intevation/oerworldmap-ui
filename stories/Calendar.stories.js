@@ -1,5 +1,4 @@
 import React from 'react'
-import { storiesOf } from '@storybook/react'
 
 import Calendar from '../src/components/Calendar'
 import WithStrings from './WithStrings'
@@ -10812,7 +10811,7 @@ const entries = [
                 "@type": "Event",
                 "name": [
                   {
-                    "@value": "OER-Talk  - „Offene Bildungsmaterialien an Hochschulen und wissenschaftlichen Bibliotheken“",
+                    "@value": "OER-Talk - „Offene Bildungsmaterialien an Hochschulen und wissenschaftlichen Bibliotheken“",
                     "@language": "en"
                   }
                 ],
@@ -12888,11 +12887,16 @@ const entries = [
   }
 ]
 
-storiesOf('Calendar', module)
-  .add('Render', () => (
+export default {
+  title: "Calendar",
+  component: Calendar
+}
+
+export const Default = {
+  render: () =>
     <WithStrings lang="en">
       <Calendar
         entries={entries}
       />
     </WithStrings>
-  ))
+}

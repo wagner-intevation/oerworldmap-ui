@@ -1,7 +1,6 @@
 
 /* global mapboxConfig */
 import React from 'react'
-import { storiesOf } from '@storybook/react'
 
 import MiniMap from '../src/components/MiniMap'
 import WithStrings from './WithStrings'
@@ -18,8 +17,13 @@ const geometry = {
 
 const country = "de"
 
-storiesOf('MiniMap', module)
-  .add('Render', () => (
+export default {
+  title: "MiniMap",
+  component: MiniMap
+}
+
+export const Default = {
+  render: () =>
     <WithStrings lang={["en"]}>
       <MiniMap
         mapboxConfig={mapboxConfig}
@@ -27,4 +31,4 @@ storiesOf('MiniMap', module)
         center={geometry ? undefined : (country && centroids[country])}
       />
     </WithStrings>
-  ))
+}

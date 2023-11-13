@@ -1,5 +1,4 @@
 import React from 'react'
-import { storiesOf } from '@storybook/react'
 
 import TimelineBlock from '../src/components/TimelineBlock'
 import WithStrings from './WithStrings'
@@ -29,8 +28,13 @@ const entry = {
   "id": "e2d5b93e7bf570b42635a35252b3955031d7e7fd"
 }
 
-storiesOf('TimelineBlock', module)
-  .add('Render', () => (
+export default {
+  title: "TimelineBlock",
+  component: TimelineBlock
+}
+
+export const Default = {
+  render: () =>
     <WithStrings lang="en">
       <TimelineBlock
         key={`${entry.id}-${entry.action.time}`}
@@ -38,12 +42,14 @@ storiesOf('TimelineBlock', module)
         entry={entry}
       />
     </WithStrings>
-  ))
-  .add('Without border', () => (
+}
+
+export const WithoutBorder = {
+  render: () =>
     <WithStrings lang="en">
       <TimelineBlock
         key={`${entry.id}-${entry.action.time}`}
         entry={entry}
       />
     </WithStrings>
-  ))
+}

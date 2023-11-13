@@ -1,11 +1,15 @@
 import React from 'react'
-import { storiesOf } from '@storybook/react'
 
 import ConceptBlock from '../src/components/ConceptBlock'
 import WithStrings from './WithStrings'
 
-storiesOf('ConceptBlock', module)
-  .add('Render', () => (
+export default {
+  title: "ConceptBlock",
+  component: ConceptBlock
+}
+
+export const Default = {
+  render: () =>
     <WithStrings lang="en">
       <ConceptBlock
         type="Service"
@@ -13,4 +17,4 @@ storiesOf('ConceptBlock', module)
         linkTemplate="/resource/?filter.about.additionalType.@id={@id}"
       />
     </WithStrings>
-  ))
+}

@@ -1,11 +1,15 @@
 import React from 'react'
-import { storiesOf } from '@storybook/react'
 
 import Log from '../src/components/Log'
 
-storiesOf('Log', module)
-  .add('Render', () => (
+export default {
+  title: "Log",
+  component: Log
+}
+
+export const Default = {
+  render: () =>
     <Log
       entries={{test: "test"}}
     />
-  ))
+}

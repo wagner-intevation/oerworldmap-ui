@@ -1,5 +1,4 @@
 import React from 'react'
-import { storiesOf } from '@storybook/react'
 
 import Icon from '../src/components/Icon'
 
@@ -17,11 +16,18 @@ const icons = [
   'Policy'
 ]
 
-storiesOf('Icon', module)
-  .add('Render', () => (
+export default {
+  title: "Icon",
+  component: Icon
+}
+
+export const Default = {
+  render: () =>
     <Icon type={icons[Math.floor(Math.random() * icons.length)]} />
-  ))
-  .add('All variants', () => (
+}
+
+export const AllVariants = {
+  render: () =>
     icons.map(icon => (
       <span>
         <Icon type={icon} />
@@ -30,4 +36,5 @@ storiesOf('Icon', module)
         <br />
       </span>
     ))
-  ))
+}
+

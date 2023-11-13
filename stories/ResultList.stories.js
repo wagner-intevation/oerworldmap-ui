@@ -1,5 +1,4 @@
 import React from 'react'
-import { storiesOf } from '@storybook/react'
 
 import ResultList from '../src/components/ResultList'
 import WithStrings from './WithStrings'
@@ -1447,11 +1446,16 @@ const listItems = [
   }
 ]
 
-storiesOf('ResultList', module)
-  .add('Render', () => (
+export default {
+  title: "ResultList",
+  component: ResultList
+}
+
+export const Default = {
+  render: () =>
     <WithStrings lang="en">
       <EmittProvider emitter={mock.emitter}>
         <ResultList listItems={listItems} />
       </EmittProvider>
     </WithStrings>
-  ))
+}

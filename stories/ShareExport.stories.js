@@ -1,12 +1,16 @@
 import React from 'react'
-import { storiesOf } from '@storybook/react'
 
 import ShareExport from '../src/components/ShareExport'
 import WithStrings from './WithStrings'
 
-storiesOf('ShareExport', module)
-  .add('Render', () => (
+export default {
+  title: "ShareExport",
+  component: ShareExport
+}
+
+export const Default = {
+  render: () =>
     <WithStrings lang="en">
       <ShareExport />
     </WithStrings>
-  ))
+}

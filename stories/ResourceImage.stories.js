@@ -1,5 +1,4 @@
 import React from 'react'
-import { storiesOf } from '@storybook/react'
 
 import ResourceImage from '../src/components/ResourceImage'
 import WithStrings from './WithStrings'
@@ -16,27 +15,34 @@ aboutWithTwitter.sameAs = [
   "https://www.linkedin.com/in/jan-neumann-18a30495?trk=hp-identity-name"
 ]
 
-const story = storiesOf('ResourceImage', module)
-  .add('Without image', () => (
+export default {
+  title: "ResourceImage",
+  component: ResourceImage
+}
+
+export const Default = {
+  render: () =>
     <WithStrings lang="en">
       <ResourceImage
         about={about}
       />
     </WithStrings>
-  ))
+}
 
-story.add('With image', () => (
-  <WithStrings lang="en">
-    <ResourceImage
-      about={aboutWithImage}
-    />
-  </WithStrings>
-))
+export const WithImage = {
+  render: () =>
+    <WithStrings lang="en">
+      <ResourceImage
+        about={aboutWithImage}
+      />
+    </WithStrings>
+}
 
-story.add('With twitter but not image', () => (
-  <WithStrings lang="en">
-    <ResourceImage
-      about={aboutWithTwitter}
-    />
-  </WithStrings>
-))
+export const WithTwitterButNotImage = {
+  render: () =>
+    <WithStrings lang="en">
+      <ResourceImage
+        about={aboutWithTwitter}
+      />
+    </WithStrings>
+}

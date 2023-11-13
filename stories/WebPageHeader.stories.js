@@ -1,7 +1,6 @@
 
 /* global mapboxConfig */
 import React from 'react'
-import { storiesOf } from '@storybook/react'
 
 import WebPageHeader from '../src/components/WebPageHeader'
 import WithStrings from './WithStrings'
@@ -32,8 +31,13 @@ const _links = {
   ]
 }
 
-storiesOf('WebPageHeader', module)
-  .add('Render', () => (
+export default {
+  title: "WebPageHeader",
+  component: WebPageHeader
+}
+
+export const Default = {
+  render: () =>
     <WithStrings lang={["en"]}>
       <WebPageHeader
         user={user}
@@ -47,8 +51,10 @@ storiesOf('WebPageHeader', module)
         embedValue
       />
     </WithStrings>
-  ))
-  .add('Without user', () => (
+}
+
+export const WithoutUser = {
+  render: () =>
     <WithStrings lang={["en"]}>
       <WebPageHeader
         about={about}
@@ -61,8 +67,10 @@ storiesOf('WebPageHeader', module)
         embedValue
       />
     </WithStrings>
-  ))
-  .add('In edit view', () => (
+}
+
+export const InEditView = {
+  render: () =>
     <WithStrings lang={["en"]}>
       <WebPageHeader
         user={user}
@@ -76,4 +84,4 @@ storiesOf('WebPageHeader', module)
         embedValue
       />
     </WithStrings>
-  ))
+}

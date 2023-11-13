@@ -1,14 +1,18 @@
 import React from 'react'
-import { storiesOf } from '@storybook/react'
 
 import FullModal from '../src/components/FullModal'
 import WithStrings from './WithStrings'
 
-storiesOf('FullModal', module)
-  .add('Render', () => (
+export default {
+  title: "FullModal",
+  component: FullModal
+}
+
+export const Default = {
+  render: () =>
     <WithStrings lang="en">
       <FullModal>
         Test
       </FullModal>
     </WithStrings>
-  ))
+}

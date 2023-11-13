@@ -1,11 +1,15 @@
 import React from 'react'
-import { storiesOf } from '@storybook/react'
 
 import Export from '../src/components/Export'
 import WithStrings from './WithStrings'
 
-storiesOf('Export', module)
-  .add('Render', () => (
+export default {
+  title: "Export",
+  component: Export
+}
+
+export const Default = {
+  render: () =>
     <WithStrings lang="en">
       <Export
         _self="httpss://example.com"
@@ -15,4 +19,4 @@ storiesOf('Export', module)
         ]}}
       />
     </WithStrings>
-  ))
+}
