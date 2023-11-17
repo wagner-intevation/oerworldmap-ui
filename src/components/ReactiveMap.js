@@ -6,7 +6,7 @@
 
 import React from 'react'
 import PropTypes from 'prop-types'
-import ReactDOM from 'react-dom'
+import { createRoot } from 'react-dom/client';
 
 import { scaleLog, quantile, interpolateHcl } from 'd3'
 
@@ -663,7 +663,8 @@ class Map extends React.Component {
           )
         }
 
-        this.hoverPopup.setDOMContent(ReactDOM.render(
+        const root = createRoot(document.createElement('div'));
+        this.hoverPopup.setDOMContent(root.render(
           <div
             className="tooltip noEvents"
             style={
@@ -673,8 +674,7 @@ class Map extends React.Component {
               }}
           >
             {popupContent}
-          </div>,
-          document.createElement('div'),
+          </div>
         )).addTo(this.map)
       }
     }
@@ -865,7 +865,8 @@ class Map extends React.Component {
 
       // Show overlay
       const popupDOM = document.createElement('div')
-      ReactDOM.render(
+      const root = createRoot(popupDOM);
+      root.render(
         <EmittProvider emitter={emitter}>
           <div
             className="tooltip"
@@ -877,8 +878,7 @@ class Map extends React.Component {
           >
             <ul className="list">{list}</ul>
           </div>
-        </EmittProvider>,
-        popupDOM,
+        </EmittProvider>
       )
 
       if (this.popup && this.popup.isOpen()) {

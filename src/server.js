@@ -1,6 +1,6 @@
 /* global Headers */
 
-import { renderToString } from 'react-dom/server'
+import { renderToPipeableStream } from "react-dom/server";
 import path from 'path'
 import express from 'express'
 import compression from 'compression'
@@ -169,7 +169,7 @@ server.get(/^(.*)$/, (req, res) => {
     console.info('Render from Server:', req.url)
     res.send(template({
       env: process.env.NODE_ENV,
-      body: renderToString(render(data)),
+      body: renderToPipeableStream(render(data)),
       initialState: JSON.stringify({
         supportedLanguages,
         config,

@@ -3,7 +3,7 @@
 /* global localStorage */
 /* global _paq */
 
-import { hydrate } from 'react-dom'
+import { createRoot } from 'react-dom/client';
 import mitt from 'mitt'
 
 import router from './router'
@@ -31,6 +31,7 @@ const sendMatomoNavigate = (title, url, context) => {
 }
 
 const client = () => {
+  const root = createRoot(document.getElementById('root'))
   document.addEventListener('DOMContentLoaded', async () => {
     await updateUser()
     let state = window.__APP_INITIAL_STATE__.data
@@ -45,7 +46,7 @@ const client = () => {
     let referrer = window.location.href
     Link.back = '/resource/'
     const renderApp = (title, component) => {
-      hydrate(component, document.getElementById('root'))
+      root.render(component)
       emitter.emit('setLoading', false)
       window.location.hash
         ? document.getElementById(window.location.hash.replace('#', ''))

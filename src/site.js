@@ -7,7 +7,7 @@
 /* global DOMParser */
 
 import React from 'react'
-import ReactDOM from 'react-dom'
+import { createRoot } from 'react-dom/client';
 import fetch from 'isomorphic-fetch'
 import mitt from 'mitt'
 import 'normalize.css'
@@ -61,7 +61,8 @@ const injectHeader = (() => {
     const target = document.querySelector('[data-inject-header]')
 
     if (target) {
-      ReactDOM.render(
+      const root = createRoot(target);
+      root.render(
         <I18nProvider i18n={
           i18n(
             locales,
@@ -74,7 +75,6 @@ const injectHeader = (() => {
             </UserProvider>
           </EmittProvider>
         </I18nProvider>,
-        target,
       )
     }
   }
@@ -108,13 +108,13 @@ const animateScrollToFragment = (() => {
 
 const injectStats = (() => {
   function init() {
-    const target = document.querySelector('[data-inject-stats]')
     if (target) {
+      const root = createRoot(document.createElement('div'));
       fetch(`${baseURL}resource.json?size=0`)
         .then(response => response.json())
         .then((json) => {
-          ReactDOM.render(
-            <Overview buckets={json.aggregations['sterms#about.@type'].buckets} />, target,
+          root.render(
+            <Overview buckets={json.aggregations['sterms#about.@type'].buckets} />
           )
         })
     }
@@ -185,8 +185,8 @@ const createPoliciesFeed = (() => {
 
       if (content) {
         const feedContainer = document.querySelector('[data-inject-feed]')
-
-        ReactDOM.render(
+        const root = createRoot(feedContainer);
+        root.render(
           <I18nProvider i18n={
             i18n(
               locales,
@@ -196,8 +196,7 @@ const createPoliciesFeed = (() => {
             <EmittProvider emitter={emitter}>
               <ItemList listItems={content.member.map(member => member.about)} />
             </EmittProvider>
-          </I18nProvider>,
-          feedContainer,
+          </I18nProvider>
         )
       }
     }
@@ -219,8 +218,8 @@ const createPolicyRelated = (() => {
 
       if (content) {
         const feedContainer = document.querySelector('[data-inject-policy-related]')
-
-        ReactDOM.render(
+        const root = createRoot(feedContainer);
+        root.render(
           <I18nProvider i18n={
             i18n(
               locales,
@@ -230,8 +229,7 @@ const createPolicyRelated = (() => {
             <EmittProvider emitter={emitter}>
               <ItemList listItems={content.member.map(member => member.about)} />
             </EmittProvider>
-          </I18nProvider>,
-          feedContainer,
+          </I18nProvider>
         )
       }
     }
@@ -266,7 +264,7 @@ const createBlogPost = (() => {
           thumbnail: ([...item.getElementsByTagName('media:thumbnail')].length > 0) && item.getElementsByTagName('media:thumbnail')[0].getAttribute('url'),
         }))
 
-        ReactDOM.render(
+        blogPostsRoot.render(
           <section className="explanation sectionLanding">
             <div className="innerLanding">
 
@@ -307,8 +305,7 @@ const createBlogPost = (() => {
               </div>
 
             </div>
-          </section>,
-          blogPostContainer,
+          </section>
         )
       } catch (error) {
         console.log(error)
