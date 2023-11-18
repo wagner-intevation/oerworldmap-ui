@@ -100,10 +100,12 @@ const configServer = merge(baseConfig, {
       filename: 'public/styles.css',
     }),
     // Copy public files
-    new CopyWebpackPlugin([
-      { from: 'public', to: 'public' },
-      { from: '../docs/assets', to: 'assets' },
-    ]),
+    new CopyWebpackPlugin({
+      patterns: [
+        { from: 'public', to: 'public' },
+        { from: '../docs/assets', to: 'assets' },
+      ]
+    }),
   ],
 })
 
