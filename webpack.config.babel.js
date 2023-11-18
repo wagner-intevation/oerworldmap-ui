@@ -25,7 +25,12 @@ const loaders = [
 const baseConfig = {
   mode: NODE_ENV,
   devtool: 'cheap-source-map',
-  externals: ['bufferutil', 'utf-8-validate'],
+  externals: [
+    'bufferutil',
+    'utf-8-validate',
+    // Workaround for this issue: https://github.com/matthew-andrews/isomorphic-fetch/issues/194
+    {'node-fetch': 'commonjs2 node-fetch'}
+  ],
   context: path.join(__dirname, 'src'),
   module: {
     exprContextCritical: false,

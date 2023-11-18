@@ -97,7 +97,7 @@
     "http-link-header": "^1.0.2",
     "ignore-loader": "^0.1.2",
     "ignore-styles": "^5.0.1",
-    "isomorphic-fetch": "^2.2.1",
+    "isomorphic-fetch": "^3.0.0",
     "jsdom": "^22.1.0",
     "json-pointer": "^0.6.0",
     "lodash": "^4.17.15",
