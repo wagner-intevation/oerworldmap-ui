@@ -76,7 +76,7 @@ const baseConfig = {
   },
   output: {
     path: path.join(__dirname, directory),
-    publicPath: !isProduction ? `http://${process.env.SERVER_HOST}:${process.env.SERVER_PORT}/`
+    publicPath: !isProduction ? `https://${process.env.SERVER_HOST}:${process.env.SERVER_PORT}/`
       : `${process.env.API_SCHEME}://${process.env.API_HOST}`
         .concat(process.env.API_PORT ? `:${process.env.API_PORT}/` : '/'),
   },

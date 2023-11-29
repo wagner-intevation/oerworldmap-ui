@@ -21,7 +21,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/hbz/oerworldmap-ui.git"
+    "url": "git+https://gitlab.educs-hosting.net/oer-world-map/oerworldmap-ui.git"
   },
   "author": "",
   "license": "Apache-2.0",
