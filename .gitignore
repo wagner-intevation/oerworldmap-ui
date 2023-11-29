@@ -6,6 +6,6 @@ npm-debug.log
 .vscode/
 docs/_site/
 docs/.jekyll-metadata
-
 # Storybook
+docs/.jekyll-cache/
 .out
