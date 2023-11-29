@@ -29,6 +29,7 @@ const loaders = [
       path.resolve(__dirname, 'node_modules/@fortawesome/fontawesome-free'),
       path.resolve(__dirname, 'node_modules/source-sans-pro'),
       path.resolve(__dirname, 'node_modules/mapbox-gl/dist'),
+      path.resolve(__dirname, 'node_modules/leaflet/dist'),
       path.resolve(__dirname, 'node_modules/simplemde/dist'),
       path.resolve(__dirname, 'node_modules/react-select'),
       path.resolve(__dirname, 'node_modules/c3'),
@@ -53,7 +54,10 @@ const loaders = [
   {
     test: /\.(png|svg|jpg|gif|ico|woff|woff2|ttf|eot|otf)$/,
     type: 'asset/resource'
-  }
+  },{
+    test: /\.geojson$/,
+    type: 'json',
+  },
 ]
 
 const baseConfig = {
@@ -98,6 +102,18 @@ const configServer = merge(baseConfig, {
     libraryTarget: 'commonjs2',
     filename: 'server.js',
   },
+  plugins: [
+    new MiniCssExtractPlugin({
+      filename: 'public/styles.css',
+    }),
+    // Copy public files
+    new CopyWebpackPlugin({
+      patterns: [
+        { from: 'public', to: 'public' },
+        { from: '../docs/assets', to: 'assets' },
+      ]
+    }),
+  ],
 })
 
 if (isProduction) {
