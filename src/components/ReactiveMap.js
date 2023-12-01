@@ -374,10 +374,8 @@ class Map extends React.Component {
 
   getPointsAtMouseEvent(event) {
     const self = this
-    
     this.pointsGeojson.eachLayer((layer) => {
       const containerPoint = this.map.latLngToContainerPoint(layer.feature.properties.location.geo)
-      
       if(Math.sqrt(
         Math.pow((event.containerPoint.x - containerPoint.x), 2)
         + Math.pow((event.containerPoint.y - containerPoint.y), 2)
@@ -402,6 +400,7 @@ class Map extends React.Component {
       const {
         translate, iso3166, phrases, locales, emitter, region,
       } = this.props
+      const { aggregations } = this.state
       const hoveredPoints = this.getPointsAtMouseEvent(event)
       const hasc = `${this.hoveredCountry}.${this.hoveredRegion}`
       if (!this.hoveredCountry && !hoveredPoints.length) {
@@ -740,185 +739,6 @@ class Map extends React.Component {
   }
 
   updatePoints(features) {
-    features = [{
-      "geometry": {
-        "coordinates": [
-          11.3290855,
-          50.9802813
-        ],
-        "type": "Point"
-      },
-      "id": "urn:uuid:3196709f-c7c3-408d-9990-9a70bf5c547f",
-      "type": "Feature",
-      "properties": {
-        "@type": "Event",
-        "name": [
-          {
-            "@value": "Test 1",
-            "@language": "en"
-          }
-        ],
-        "location": {
-          "geo": {
-            "lon": 11.3290855,
-            "lat": 50.9802813
-          },
-          "address": {
-            "addressCountry": "DE",
-            "postalCode": "99423",
-            "addressLocality": "Weimar",
-            "addressRegion": "DE.TH"
-          }
-        },
-        "@id": "urn:uuid:3196709f-c7c3-408d-9990-9a70bf5c547f"
-      }
-    },
-    {
-      "properties": {
-        "@id": "urn:uuid:4e6f0a59-30c2-4045-9f6f-b599740c42c5",
-        "@type": "Person",
-        "name": [
-          {
-            "@language": "de",
-            "@value": "Jöran Muuß-Merholz"
-          }
-        ],
-        "image": "https://www.joeran.de/wp-content/dox/sites/10/J_K_Team_Q_OER_Joeran_EINZEL_Hanna_Birr_CC_BY.png",
-        "additionalType": [
-          {
-            "@id": "https://oerworldmap.org/assets/json/persons.json#consultant",
-            "@type": "Concept",
-            "name": [
-              {
-                "@language": "pt",
-                "@value": "Consultant"
-              },
-              {
-                "@language": "de",
-                "@value": "Berater/in"
-              },
-              {
-                "@language": "en",
-                "@value": "Consultant"
-              }
-            ]
-          },
-          {
-            "@id": "https://oerworldmap.org/assets/json/persons.json#instructionalDesigner",
-            "@type": "Concept",
-            "name": [
-              {
-                "@language": "pt",
-                "@value": "Instructional designer"
-              },
-              {
-                "@language": "de",
-                "@value": "Instruktionsdesigner/in"
-              },
-              {
-                "@language": "en",
-                "@value": "Instructional designer"
-              }
-            ]
-          },
-          {
-            "@id": "https://oerworldmap.org/assets/json/persons.json#teacher",
-            "@type": "Concept",
-            "name": [
-              {
-                "@language": "pt",
-                "@value": "Teacher"
-              },
-              {
-                "@language": "de",
-                "@value": "Lehrperson"
-              },
-              {
-                "@language": "en",
-                "@value": "Teacher"
-              }
-            ]
-          },
-          {
-            "@id": "https://oerworldmap.org/assets/json/persons.json#eLearningProfessional",
-            "@type": "Concept",
-            "name": [
-              {
-                "@language": "pt",
-                "@value": "E-learning professional"
-              },
-              {
-                "@language": "de",
-                "@value": "E-Learning-Experte"
-              },
-              {
-                "@language": "en",
-                "@value": "E-learning professional"
-              }
-            ]
-          },
-          {
-            "@id": "https://oerworldmap.org/assets/json/persons.json#other",
-            "@type": "Concept",
-            "name": [
-              {
-                "@language": "pt",
-                "@value": "Other"
-              },
-              {
-                "@language": "de",
-                "@value": "Sonstige"
-              },
-              {
-                "@language": "en",
-                "@value": "Other"
-              }
-            ]
-          },
-          {
-            "@id": "https://oerworldmap.org/assets/json/persons.json#oerAdvocate",
-            "@type": "Concept",
-            "name": [
-              {
-                "@language": "pt",
-                "@value": "OER advocate"
-              },
-              {
-                "@language": "de",
-                "@value": "OER-Befürworter"
-              },
-              {
-                "@language": "en",
-                "@value": "OER advocate"
-              }
-            ]
-          }
-        ],
-        "location": {
-          "address": {
-            "addressCountry": "DE",
-            "addressLocality": "Hamburg",
-            "addressRegion": "DE.HH",
-            "postalCode": "20099",
-            "streetAddress": "Schmilinskystraße 45"
-          },
-          "geo": {
-            "lon": 9.995295,
-            "lat": 53.555118
-          }
-        }
-      },
-      "type": "Feature",
-      "id": "urn:uuid:4e6f0a59-30c2-4045-9f6f-b599740c42c5",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          9.995295,
-          53.555118
-        ]
-      }
-    },
-  ]
     const pointsCollection = {
       type: 'FeatureCollection',
       features,
@@ -933,7 +753,7 @@ class Map extends React.Component {
       opacity: 1,
       fillOpacity: 0.8
     }
-    
+
     this.pointsGeojson = this.L.geoJSON(pointsCollection, {
       pointToLayer: function (feature, latlng) {
         const marker = self.L.circleMarker(latlng, geojsonMarkerOptions)
