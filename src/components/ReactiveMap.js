@@ -372,18 +372,41 @@ class Map extends React.Component {
     }
   }
 
+  /**
+   * Calculates the distance in pixels between a container point and a geographical point.
+   * @param {*} geo geo object inside a feature object
+   * @param {*} containerPoint (see for example https://leafletjs.com/reference.html#mouseevent-containerpoint)
+   * @returns The distance in pixels
+   */
+  calculateDistance(geo, containerPoint) {
+    const latlng = this.L.latLng(geo.lat, geo.lon)
+    const secondContainerPoint = this.map.latLngToContainerPoint(latlng)
+    return Math.sqrt(
+      Math.pow((containerPoint.x - secondContainerPoint.x), 2)
+      + Math.pow((containerPoint.y - secondContainerPoint.y), 2)
+    )
+  }
+
   getPointsAtMouseEvent(event) {
-    const self = this
     this.pointsGeojson.eachLayer((layer) => {
-      const containerPoint = this.map.latLngToContainerPoint(layer.feature.properties.location.geo)
-      if(Math.sqrt(
-        Math.pow((event.containerPoint.x - containerPoint.x), 2)
-        + Math.pow((event.containerPoint.y - containerPoint.y), 2)
-        ) <= 10) {
-        self.hoveredPointLayers.add(layer)
+      let distance
+      if(layer.feature.properties.location.length) {
+        if (layer.feature.properties.location[0].geo) {
+          distance = this.calculateDistance(layer.feature.properties.location[0].geo, event.containerPoint)
+        } else if (layer.feature.properties.location[1].geo) {
+          distance = this.calculateDistance(layer.feature.properties.location[1].geo, event.containerPoint)
+        }
+      } else {
+        distance = this.calculateDistance(layer.feature.properties.location.geo, event.containerPoint)
       }
-        else if (self.hoveredPointLayers.has(layer)) {
-        self.hoveredPointLayers.delete(layer)
+
+      if (!distance) return
+
+      if(distance <= 10) {
+        this.hoveredPointLayers.add(layer)
+      }
+        else if (this.hoveredPointLayers.has(layer)) {
+          this.hoveredPointLayers.delete(layer)
       }
     })
     const points = []
