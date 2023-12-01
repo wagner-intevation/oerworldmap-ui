@@ -389,20 +389,18 @@ class Map extends React.Component {
 
   getPointsAtMouseEvent(event) {
     this.pointsGeojson.eachLayer((layer) => {
-      let distance
+      const distances = []
       if(layer.feature.properties.location.length) {
-        if (layer.feature.properties.location[0].geo) {
-          distance = this.calculateDistance(layer.feature.properties.location[0].geo, event.containerPoint)
-        } else if (layer.feature.properties.location[1].geo) {
-          distance = this.calculateDistance(layer.feature.properties.location[1].geo, event.containerPoint)
-        }
+        layer.feature.properties.location.forEach(location => {
+          if (location.geo) distances.push(this.calculateDistance(location.geo, event.containerPoint))
+        })
       } else {
-        distance = this.calculateDistance(layer.feature.properties.location.geo, event.containerPoint)
+        distances.push(this.calculateDistance(layer.feature.properties.location.geo, event.containerPoint))
       }
 
-      if (!distance) return
+      if (distances.length === 0) return
 
-      if(distance <= 10) {
+      if (Math.min(distances) <= 10) {
         this.hoveredPointLayers.add(layer)
       }
         else if (this.hoveredPointLayers.has(layer)) {
