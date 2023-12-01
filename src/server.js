@@ -15,7 +15,7 @@ import i18n from './i18n'
 import { createGraph } from './components/imgGraph'
 
 import Config, {
-  mapboxConfig, apiConfig, piwikConfig, i18nConfig, elasticsearchConfig,
+  mapboxConfig, apiConfig, uiConfig, piwikConfig, i18nConfig, elasticsearchConfig,
 } from '../config'
 
 global.URL = require('url').URL
@@ -188,6 +188,6 @@ server.get(/^(.*)$/, (req, res) => {
   })
 })
 
-server.listen(Config.port, Config.host, () => {
-  console.info(`oerworldmap-ui server listening on http://${Config.host}:${Config.port}`)
+server.listen(uiConfig.port, uiConfig.host, () => {
+  console.info(`oerworldmap-ui server listening on http://${uiConfig.host}:${uiConfig.port}`)
 })
