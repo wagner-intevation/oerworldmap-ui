@@ -432,7 +432,6 @@ class Map extends React.Component {
       } else {
         this.tooltip.setLatLng(event.latlng)
         let popupContent
-
         if (hoveredPoints.length) {
           if (hoveredPoints.length > 6) {
             popupContent = (
@@ -450,7 +449,7 @@ class Map extends React.Component {
                 {hoveredPoints.map(point => (
                   <li key={point.properties['@id']}>
                     <Icon type={point.properties['@type']} />
-                    {translate(JSON.parse(point.properties.name))}
+                    {translate(point.properties.name)}
                   </li>
                 ))}
               </ul>
@@ -464,14 +463,10 @@ class Map extends React.Component {
                     <EmittProvider emitter={emitter}>
                       <ResourcePreview
                         about={Object.assign(hoveredPoints[0].properties, {
-                          name: JSON.parse(hoveredPoints[0].properties.name),
-                          location: [JSON.parse(hoveredPoints[0].properties.location)],
-                          additionalType: hoveredPoints[0].properties.additionalType
-                            && JSON.parse(hoveredPoints[0].properties.additionalType)
-                            || undefined,
-                          alternateName: hoveredPoints[0].properties.alternateName
-                            && JSON.parse(hoveredPoints[0].properties.alternateName)
-                            || undefined,
+                          name: hoveredPoints[0].properties.name,
+                          location: [hoveredPoints[0].properties.location],
+                          additionalType: hoveredPoints[0].properties.additionalType,
+                          alternateName: hoveredPoints[0].properties.alternateName,
                         })}
                       />
                     </EmittProvider>
