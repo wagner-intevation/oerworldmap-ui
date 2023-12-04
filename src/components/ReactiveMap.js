@@ -391,7 +391,7 @@ class Map extends React.Component {
     const geoObjects = []
     if (!location.length && location.geo) {
       geoObjects.push(location.geo)
-    } else {
+    } else if (location.length) {
       location.forEach((element) => {
         geoObjects.push(...this.getGeoObjects(element))
       })
