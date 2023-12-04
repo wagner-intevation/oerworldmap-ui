@@ -387,24 +387,32 @@ class Map extends React.Component {
     )
   }
 
+  getGeoObjects(location) {
+    const geoObjects = []
+    if (!location.length && location.geo) {
+      geoObjects.push(location.geo)
+    } else {
+      location.forEach((element) => {
+        geoObjects.push(...this.getGeoObjects(element))
+      })
+    }
+    return geoObjects
+  }
+
   getPointsAtMouseEvent(event) {
     this.pointsGeojson.eachLayer((layer) => {
       const distances = []
-      if(layer.feature.properties.location.length) {
-        layer.feature.properties.location.forEach(location => {
-          if (location.geo) distances.push(this.calculateDistance(location.geo, event.containerPoint))
-        })
-      } else {
-        distances.push(this.calculateDistance(layer.feature.properties.location.geo, event.containerPoint))
-      }
+      const geoObjects = this.getGeoObjects(layer.feature.properties.location)
+      geoObjects.forEach((geo) => {
+        distances.push(this.calculateDistance(geo, event.containerPoint))
+      })
 
-      if (distances.length === 0) return
+      if (distances.length === 0) return []
 
       if (Math.min(distances) <= 10) {
         this.hoveredPointLayers.add(layer)
-      }
-        else if (this.hoveredPointLayers.has(layer)) {
-          this.hoveredPointLayers.delete(layer)
+      } else if (this.hoveredPointLayers.has(layer)) {
+        this.hoveredPointLayers.delete(layer)
       }
     })
     const points = []
@@ -430,7 +438,7 @@ class Map extends React.Component {
       } else {
         this.tooltip.setLatLng(event.latlng)
         let popupContent
-        if (hoveredPoints.length) {
+        if (hoveredPoints.length > 0) {
           if (hoveredPoints.length > 6) {
             popupContent = (
               <ul>
