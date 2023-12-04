@@ -693,7 +693,7 @@ class Map extends React.Component {
         <li key={feature.properties['@id']}>
           <Link href={feature.properties['@id']}>
             <Icon type={feature.properties['@type']} />
-            {translate(JSON.parse(feature.properties.name))}
+            {translate(feature.properties.name)}
           </Link>
         </li>
       ))
