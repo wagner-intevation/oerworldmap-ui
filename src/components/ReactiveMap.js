@@ -737,6 +737,13 @@ class Map extends React.Component {
   }
 
   updatePoints(features) {
+    if (
+      !features
+      || (features.length !== undefined && features.length === 0 && this.pointsGeojson)
+    ) {
+      this.pointsGeojson.remove()
+      return
+    }
     const pointsCollection = {
       type: 'FeatureCollection',
       features,
