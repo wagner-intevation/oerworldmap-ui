@@ -789,33 +789,31 @@ class Map extends React.Component {
     const { overlayList } = this.state
 
     return (
-      <div>
-        <div
-          ref={(map) => { this.Map = map }}
-          id="Map"
-          style={
-            {
-              position: 'relative',
-              width: '100%',
-              height: '75vh',
-            }
+      <div
+        ref={(map) => { this.Map = map }}
+        id="Map"
+        style={
+          {
+            position: 'relative',
+            width: '100%',
+            height: '75vh',
           }
-          onKeyDown={(e) => {
-            if (e.keyCode === 27 && iso3166) {
-              emitter.emit('navigate', '/resource/')
-            }
-          }}
-          role="presentation"
-        >
-          {overlayList && <div className="overlayList" />}
+        }
+        onKeyDown={(e) => {
+          if (e.keyCode === 27 && iso3166) {
+            emitter.emit('navigate', '/resource/')
+          }
+        }}
+        role="presentation"
+      >
+        {overlayList && <div className="overlayList" />}
 
-          <MapLeyend
-            iso3166={iso3166}
-          />
+        <MapLeyend
+          iso3166={iso3166}
+        />
 
-          <a className="imprintLink" href="/imprint">{translate('main.imprintPrivacy')}</a>
+        <a className="imprintLink" href="/imprint">{translate('main.imprintPrivacy')}</a>
 
-        </div>
       </div>
     )
   }
