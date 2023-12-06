@@ -8,13 +8,11 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { createRoot } from 'react-dom/client';
 
-import { scaleLog, quantile, interpolateHcl } from 'd3'
+import { scaleLog, quantile, interpolateHcl, color as d3color, formatHex } from 'd3'
 
 import 'leaflet/dist/leaflet.css'
 import * as countriesGeojsonFile from '../geojson/countries.geojson'
 import * as regionsGeojsonFile from '../geojson/regions.geojson'
-
-import * as testBuckets from '../../test/resources/aggregation.json'
 
 import centroids from '../json/centroids.json'
 
@@ -164,9 +162,6 @@ class Map extends React.Component {
       this.map.on('click', this.handleClick)
 
       this.isReady = true
-
-      this.updatePoints([])
-      this.updateChoropleth({})
   }
 
   componentDidUpdate(nextProps) {
@@ -609,58 +604,38 @@ class Map extends React.Component {
   choroplethStopsFromBuckets(buckets) {
     const counts = buckets.map(bucket => bucket.doc_count)
     const range = [
+      '#bc3754',
       '#fcffa4',
-      '#f1ed71',
     ]
-    /*const range = this.map.getStyle().layers
-      .filter(layer => layer.id.startsWith('choropleth'))
-      .map((layer) => {
-        this.map.setLayoutProperty(layer.id, 'visibility', 'none')
-        return this.map.getPaintProperty(layer.id, 'fill-color')
-      })*/
 
-    const getColor = scaleLog()
-      .range([range[range.length - 1], range[0]])
-      .interpolate(interpolateHcl)
-      .domain([quantile(counts, 0.01), quantile(counts, 0.99)])
+    const getColor = (count) => {
+      const rgb = scaleLog()
+        .range([range[range.length - 1], range[0]])
+        .interpolate(interpolateHcl)
+        .domain([quantile(counts, 0.01), quantile(counts, 0.99)])
+      return d3color(rgb(count)).formatHex()
+    }
 
     return buckets.length
       ? buckets.map(bucket => [bucket.key, getColor(bucket.doc_count)])
-      : [['', 'rgb(255, 255, 255)']]
+      : [['', '#fff']]
   }
 
   updateChoropleth(aggregations) {
     const { emitter } = this.props
-    const tBuckets = testBuckets["about.location.address.addressCountry"]['buckets']
     if (aggregations) {
-      //const aggregation = aggregations['sterms#feature.properties.location.address.addressRegion']
-      //  || aggregations['sterms#feature.properties.location.address.addressCountry']
-      //const stops = this.choroplethStopsFromBuckets(aggregation.buckets)
-      const stops = this.choroplethStopsFromBuckets(tBuckets)
-      /*const colors = [[]]
-        .map(stop => stop[1])
-        .filter((value, index, self) => self.indexOf(value) === index)
-        .concat('rgba(255, 255, 255)')
-        .reverse()*/
-      const colorPalette = [
-        '#fcffa4',
-        '#f1ed71',
-        '#f6d543',
-        '#fbba1f',
-        '#fca108',
-        '#f8870e',
-        '#f1711f',
-        '#e55c30',
-        '#d74b3f',
-        '#c43c4e'
-      ]
-      const colors = tBuckets.map(bucket => {
-        return [bucket.key, colorPalette[Math.floor(Math.random() * (colorPalette.length - 1))]]
-      })
+      const aggregation = aggregations['sterms#feature.properties.location.address.addressRegion']
+        || aggregations['sterms#feature.properties.location.address.addressCountry']
+      const stops = this.choroplethStopsFromBuckets(aggregation.buckets)
+      const colors = stops
+      .map(stop => stop[1])
+      .filter((value, index, self) => self.indexOf(value) === index)
+      .concat('#fff')
+      .reverse()
 
       const colorsObject = {}
-      colors.forEach((color) => {
-        colorsObject[color[0]] = color[1]
+      stops.forEach((stop) => {
+        colorsObject[stop[0]] = stop[1]
       })
 
       this.countriesGeojson.setStyle((feature) => {
@@ -677,8 +652,7 @@ class Map extends React.Component {
         }
       })
 
-      //const max = (aggregation.buckets.length && aggregation.buckets[0].doc_count) || 0
-      const max = (tBuckets.length && tBuckets[0].doc_count) || 0
+      const max = (aggregation.buckets.length && aggregation.buckets[0].doc_count) || 0
       emitter.emit('updateColors', { colors, max })
     }
   }
@@ -806,7 +780,6 @@ class Map extends React.Component {
 
   handleClick(e) {
     this.addRegions()
-    this.updateChoropleth({})
   }
 
   render() {
