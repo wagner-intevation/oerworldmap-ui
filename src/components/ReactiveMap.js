@@ -744,12 +744,12 @@ class Map extends React.Component {
     this.tooltip && this.tooltip.remove()
     const self = this
     var geojsonMarkerOptions = {
-      radius: 10,
-      fillColor: "#555",
-      color: "#222",
+      radius: this.initialRadius,
+      fillColor: "#fff",
+      color: "#ff9933",
       weight: 1,
       opacity: 1,
-      fillOpacity: 0.8
+      fillOpacity: this.initialOpacity
     }
 
     this.pointsGeojson = this.L.geoJSON(pointsCollection, {
