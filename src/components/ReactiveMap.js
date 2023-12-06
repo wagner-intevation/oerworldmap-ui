@@ -138,30 +138,30 @@ class Map extends React.Component {
     this.regionLayerGroup = L.layerGroup().addTo(this.map)
 
     this.initialRadius = window.innerWidth <= 700 ? 10 : 5
-      this.radius = this.initialRadius
-      this.framesPerSecond = 15
-      this.initialOpacity = 0.9
-      this.opacity = this.initialOpacity
-      this.maxRadius = this.initialRadius * 20
-      this.animatingMarkers = null
-      this.start = null
+    this.radius = this.initialRadius
+    this.framesPerSecond = 15
+    this.initialOpacity = 0.9
+    this.opacity = this.initialOpacity
+    this.maxRadius = this.initialRadius * 20
+    this.animatingMarkers = null
+    this.start = null
 
-      this.map.on('zoom', this.zoom)
+    this.map.on('zoom', this.zoom)
 
-      // Initialize choropleth layers
-      this.updateActiveCountry(iso3166, region)
+    // Initialize choropleth layers
+    this.updateActiveCountry(iso3166, region)
 
-      window.addEventListener('resize', () => {
-        clearTimeout(resizeTimer)
-        resizeTimer = setTimeout(this.setPinSize, 250)
-      })
+    window.addEventListener('resize', () => {
+      clearTimeout(resizeTimer)
+      resizeTimer = setTimeout(this.setPinSize, 250)
+    })
 
-      // Update URL values
-      // this.map.on('moveend', this.moveEnd)
+    // Update URL values
+    // this.map.on('moveend', this.moveEnd)
 
-      this.map.on('click', this.handleClick)
+    this.map.on('click', this.handleClick)
 
-      this.isReady = true
+    this.isReady = true
   }
 
   componentDidUpdate(nextProps) {
