@@ -130,7 +130,7 @@ class Map extends React.Component {
     })
 
     this.map.on('mouseout', () => {
-      this.tooltip.remove()
+      this.tooltip.close()
     })
 
     this.addCountries()
@@ -432,7 +432,6 @@ class Map extends React.Component {
         // Water since there is no country
         this.tooltip.close()
       } else {
-        this.tooltip.setLatLng(event.latlng)
         let popupContent
         if (hoveredPoints.length > 0) {
           if (hoveredPoints.length > 6) {
@@ -579,8 +578,18 @@ class Map extends React.Component {
             {popupContent}
           </div>
         )
-        this.tooltip.setContent(div)
-        this.tooltip.openOn(this.map)
+        this.tooltip.setLatLng(event.latlng)
+        // The delay by setTimeout() - even with a delay of 0 - is enough so the HTML
+        // is ready to be shown. Necessary to prevent an annoying flickering effect.
+        setTimeout(() => {
+          if (!this.tooltip.getContent() || this.tooltip.getContent().innerText?.replaceAll('\n', '') !== div.innerText) {
+            this.tooltip.setContent(div)
+          }
+          if (!this.tooltip.isOpen()) {
+            this.tooltip.openOn(this.map)
+          }
+        }, 0)
+
       }
     }
   }
@@ -749,7 +758,7 @@ class Map extends React.Component {
       type: 'FeatureCollection',
       features,
     }
-    this.tooltip && this.tooltip.remove()
+    this.tooltip && this.tooltip.close()
     const self = this
     var geojsonMarkerOptions = {
       radius: this.initialRadius,
