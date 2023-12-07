@@ -221,7 +221,7 @@ class Map extends React.Component {
         return country === countryCode
       }
     })
-    this.regionLayerGroup.clearLayers()
+    this.removeRegions()
     this.regionsGeojson.addTo(this.regionLayerGroup)
     this.regionsGeojson.on('click', (event) => {
       this.L.DomEvent.stop(event)
@@ -242,6 +242,10 @@ class Map extends React.Component {
       this.hoveredCountry = undefined
       this.hoveredRegion = undefined
     })
+  }
+
+  removeRegions() {
+    this.regionLayerGroup.clearLayers()
   }
 
   addCountries() {
@@ -308,8 +312,8 @@ class Map extends React.Component {
     })
     if (countryCode) {
       const { emitter } = this.props
-      emitter.emit('navigate', `/country/${countryCode.toLowerCase()}${window.location.search}`)
       this.addRegions(countryCode)
+      emitter.emit('navigate', `/country/${countryCode.toLowerCase()}${window.location.search}`)
     }
     this.map.flyToBounds(event.layer._bounds)
   }
@@ -642,25 +646,45 @@ class Map extends React.Component {
       .filter((value, index, self) => self.indexOf(value) === index)
       .concat('#fff')
       .reverse()
+      const layer = aggregations['sterms#feature.properties.location.address.addressRegion']
+        ? 'Regions' : 'countries'
 
       const colorsObject = {}
       stops.forEach((stop) => {
         colorsObject[stop[0]] = stop[1]
       })
 
-      this.countriesGeojson.setStyle((feature) => {
-        if (feature.properties['ISO_A2'] !== -99 && colorsObject[feature.properties['ISO_A2']]) {
-          return {
-            "fillColor": colorsObject[feature.properties['ISO_A2']],
-            "fillOpacity": 1
+      if (layer === 'countries') {
+        this.countriesGeojson.setStyle((feature) => {
+          if (feature.properties['ISO_A2'] !== -99 && colorsObject[feature.properties['ISO_A2']]) {
+            return {
+              "fillColor": colorsObject[feature.properties['ISO_A2']],
+              "fillOpacity": 1
+            }
+          } else {
+            return {
+              "fillColor": '#FFFFFF',
+              "fillOpacity": 1
+            }
           }
-        } else {
-          return {
-            "fillColor": '#FFFFFF',
-            "fillOpacity": 1
+        })
+      } else {
+        this.regionsGeojson.setStyle((feature) => {
+          if (feature.properties['iso_3166_2'].split('-')[1] !== -99
+            && colorsObject[feature.properties['iso_3166_2'].replace('-', '.')])
+          {
+            return {
+              "fillColor": colorsObject[feature.properties['iso_3166_2'].replace('-', '.')],
+              "fillOpacity": 1
+            }
+          } else {
+            return {
+              "fillColor": '#FFFFFF',
+              "fillOpacity": 1
+            }
           }
-        }
-      })
+        })
+      }
 
       const max = (aggregation.buckets.length && aggregation.buckets[0].doc_count) || 0
       emitter.emit('updateColors', { colors, max })
@@ -731,6 +755,8 @@ class Map extends React.Component {
 
     const { emitter } = this.props
 
+    this.removeRegions()
+
     if (features[0].properties.iso_3166_1 !== '-99') {
       emitter.emit('navigate', `/country/${features[0].properties.iso_3166_1.toLowerCase()}${window.location.search}`)
     }
@@ -796,7 +822,9 @@ class Map extends React.Component {
   }
 
   handleClick(e) {
-    this.addRegions()
+    this.removeRegions()
+    const { emitter } = this.props
+    emitter.emit('navigate', '/resource/?view=map&size=20&sort=dateCreated')
   }
 
   render() {
