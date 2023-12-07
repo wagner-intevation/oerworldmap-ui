@@ -1,7 +1,15 @@
 #Map {
   font-family: var(--font-family);
 
-  & .tooltip {
+  & .leaflet-tooltip-right::before {
+    border-right-color: var(--blue-dark);
+  }
+
+  & .leaflet-tooltip-left::before {
+    border-left-color: var(--blue-dark);
+  }
+
+  & .leaflet-tooltip {
     border: 1px solid var(--blue-dark);
     background-color: var(--white);
     max-width: 322px;
