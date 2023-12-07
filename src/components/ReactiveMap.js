@@ -165,6 +165,7 @@ class Map extends React.Component {
   }
 
   componentDidUpdate(nextProps) {
+    this.map.invalidateSize(false)
     const {
       iso3166, map, region, home,
     } = this.props
