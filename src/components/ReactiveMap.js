@@ -784,6 +784,9 @@ class Map extends React.Component {
       || (features.length !== undefined && features.length === 0 && this.pointsGeojson)
     ) {
       this.pointsGeojson.remove()
+      this.tooltip.close()
+      this.tooltip.setContent('')
+      this.popup.close()
       return
     }
     const pointsCollection = {
