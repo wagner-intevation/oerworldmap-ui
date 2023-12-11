@@ -9,12 +9,21 @@
     border-left-color: var(--blue-dark);
   }
 
-  & .leaflet-tooltip {
+  & .leaflet-popup {
+    & .leaflet-popup-content-wrapper {
+      border-radius: 0;
+    }
+
+    & .leaflet-popup-tip {
+      border: 1pt var(--blue-dark) solid;
+    }
+  }
+
+  & .leaflet-tooltip, .leaflet-popup {
     border: 1px solid var(--blue-dark);
     background-color: var(--white);
     max-width: 322px;
     color: var(--blue-dark);
-    position: relative;
     font-family: var(--font-family);
 
     & a {
@@ -337,14 +346,14 @@
     }
   }
 
-  & .mapboxgl-popup {
+  & .leaflet-popup {
     max-width: 322px !Important;
     z-index: 5;
   }
 
-  & .mapboxgl-popup-content {
+  & .leaflet-popup-content {
     padding: 0;
-    min-width: 322px;
+    min-width: calc(322px - 24px - 20px);
     max-width: 322px;
     pointer-events: none;
 

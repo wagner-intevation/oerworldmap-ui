@@ -423,6 +423,7 @@ class Map extends React.Component {
   }
 
   mouseMove(event) {
+    if(this.popup?.isOpen()) return
     const { overlayList } = this.state
 
     if (!overlayList) {
@@ -724,25 +725,30 @@ class Map extends React.Component {
         </EmittProvider>
       )
 
-      if (this.tooltip && this.tooltip.isOpen()) {
-        this.tooltip.remove()
+      if (this.popup) {
+        if (this.popup.isOpen()) {
+          this.popup.close()
+        }
       } else {
-        this.tooltip = new this.L.tooltip({
+        this.popup = new this.L.popup({
           opacity: 1,
-        permanent: true,
-        })
-          .setLatLng(this.tooltip ? this.tooltip._latlng : features[0].geometry.coordinates)
-          .setContent(popupDOM)
-          .addTo(this.map)
-
-        this.tooltip.on('close', () => {
-          this.setState({ overlayList: false })
-        })
-
-        this.setState({
-          overlayList: true,
+          permanent: true,
         })
       }
+
+      this.popup.on('remove', () => {
+        this.setState({ overlayList: false })
+      })
+
+      this.popup.setContent(popupDOM)
+      this.popup.setLatLng(e.latlng)
+      this.popup.openOn(this.map)
+
+      this.tooltip.close()
+
+      this.setState({
+        overlayList: true,
+      })
     } else {
       // Click on a single resource
       const url = `/resource/${features[0].properties['@id']}`
