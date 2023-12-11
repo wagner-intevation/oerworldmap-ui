@@ -256,11 +256,6 @@ class Map extends React.Component {
         "weight": 1,
         "fillColor": "#349900",
         "fillOpacity": 0
-      },
-      onEachFeature: (feature, layer) => {
-        if (iso3166 && feature.properties['ISO_A2'] === iso3166) {
-          this.map.flyToBounds(layer._bounds)
-        }
       }
     })
 
@@ -315,7 +310,10 @@ class Map extends React.Component {
       this.addRegions(countryCode)
       emitter.emit('navigate', `/country/${countryCode.toLowerCase()}${window.location.search}`)
     }
-    this.map.flyToBounds(event.layer._bounds)
+    const boundsToUse = countryCode in bounds ?
+      bounds[countryCode] :
+      event.layer._bounds
+    this.map.flyTo(this.L.latLng(boundsToUse[1], boundsToUse[0]), boundsToUse[2])
   }
 
   getBucket(location, aggregation) {
