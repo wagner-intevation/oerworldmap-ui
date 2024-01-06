@@ -4,6 +4,7 @@ import merge from 'webpack-merge'
 import MiniCssExtractPlugin from 'mini-css-extract-plugin'
 import CssMinimizerPlugin from 'css-minimizer-webpack-plugin'
 import CopyWebpackPlugin from 'copy-webpack-plugin'
+require('dotenv').config({ path: './.env' });
 
 const { NODE_ENV } = process.env
 const isProduction = NODE_ENV === 'production'
@@ -20,6 +21,39 @@ const loaders = [
       },
     },
   },
+  {
+    test: /\.(css|pcss)$/,
+    include: [
+      path.resolve(__dirname, 'src'),
+      path.resolve(__dirname, 'node_modules/normalize.css'),
+      path.resolve(__dirname, 'node_modules/@fortawesome/fontawesome-free'),
+      path.resolve(__dirname, 'node_modules/source-sans-pro'),
+      path.resolve(__dirname, 'node_modules/mapbox-gl/dist'),
+      path.resolve(__dirname, 'node_modules/simplemde/dist'),
+      path.resolve(__dirname, 'node_modules/react-select'),
+      path.resolve(__dirname, 'node_modules/c3'),
+    ],
+    use: [
+      MiniCssExtractPlugin.loader,
+      {
+        loader: 'css-loader',
+        options: {
+          importLoaders: 1,
+          sourceMap: !isProduction,
+        },
+      },
+      {
+        loader: 'postcss-loader',
+        options: {
+          sourceMap: !isProduction,
+        },
+      },
+    ],
+  },
+  {
+    test: /\.(png|svg|jpg|gif|ico|woff|woff2|ttf|eot|otf)$/,
+    type: 'asset/resource'
+  }
 ]
 
 const baseConfig = {
@@ -47,6 +81,9 @@ const baseConfig = {
     new webpack.IgnorePlugin({
       resourceRegExp: /canvas/
     }),
+    new MiniCssExtractPlugin({
+      filename: 'public/styles.css',
+    }),
   ],
 }
 
@@ -61,57 +98,6 @@ const configServer = merge(baseConfig, {
     libraryTarget: 'commonjs2',
     filename: 'server.js',
   },
-  module: {
-    rules: loaders.concat({
-      test: /\.(css|pcss)$/,
-      include: [
-        path.resolve(__dirname, 'src'),
-        path.resolve(__dirname, 'node_modules/normalize.css'),
-        path.resolve(__dirname, 'node_modules/font-awesome'),
-        path.resolve(__dirname, 'node_modules/source-sans-pro'),
-        path.resolve(__dirname, 'node_modules/mapbox-gl/dist'),
-        path.resolve(__dirname, 'node_modules/simplemde/dist'),
-        path.resolve(__dirname, 'node_modules/react-select'),
-        path.resolve(__dirname, 'node_modules/c3'),
-      ],
-      use: [
-        MiniCssExtractPlugin.loader,
-        {
-          loader: 'css-loader',
-          options: {
-            importLoaders: 1,
-            sourceMap: !isProduction,
-          },
-        },
-        {
-          loader: 'postcss-loader',
-          options: {
-            sourceMap: !isProduction,
-          },
-        },
-      ],
-    }, {
-      test: /\.(png|svg|jpg|gif|ico|woff|woff2|ttf|eot|otf)$/,
-      use: {
-        loader: 'file-loader',
-        options: {
-          outputPath: 'public/',
-        },
-      },
-    }),
-  },
-  plugins: [
-    new MiniCssExtractPlugin({
-      filename: 'public/styles.css',
-    }),
-    // Copy public files
-    new CopyWebpackPlugin({
-      patterns: [
-        { from: 'public', to: 'public' },
-        { from: '../docs/assets', to: 'assets' },
-      ]
-    }),
-  ],
 })
 
 if (isProduction) {
@@ -127,13 +113,6 @@ const configClient = merge(baseConfig, {
     '@babel/polyfill',
     './client.js',
   ],
-  module: {
-    // Styles styles and resources are processed by the server so they can be ignored
-    rules: loaders.concat({
-      test: /\.(css|pcss|png|svg|jpg|gif|ico|woff|woff2|ttf|eot|otf)$/,
-      use: 'ignore-loader',
-    }),
-  },
   output: {
     filename: 'public/client.js',
   },
