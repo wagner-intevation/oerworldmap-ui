@@ -79,6 +79,7 @@ const baseConfig = {
     publicPath: !isProduction ? `https://${process.env.SERVER_HOST}:${process.env.SERVER_PORT}/`
       : `${process.env.API_SCHEME}://${process.env.API_HOST}`
         .concat(process.env.API_PORT ? `:${process.env.API_PORT}/` : '/'),
+    assetModuleFilename: 'public/[hash][ext][query]'
   },
   plugins: [
     new webpack.ProgressPlugin(),
