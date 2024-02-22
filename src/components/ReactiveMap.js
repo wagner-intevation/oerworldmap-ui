@@ -785,7 +785,7 @@ class Map extends React.Component {
       this.pointsGeojson.remove()
       this.tooltip.close()
       this.tooltip.setContent('')
-      this.popup.close()
+      this.popup?.close()
       return
     }
     const pointsCollection = {
@@ -796,8 +796,8 @@ class Map extends React.Component {
     const self = this
     var geojsonMarkerOptions = {
       radius: this.initialRadius,
-      fillColor: "#fff",
-      color: "#ff9933",
+      fillColor: "#051d2e",
+      color: "#fff",
       weight: 1,
       opacity: 1,
       fillOpacity: this.initialOpacity
