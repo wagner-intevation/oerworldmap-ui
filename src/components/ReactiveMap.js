@@ -617,7 +617,7 @@ class Map extends React.Component {
   choroplethStopsFromBuckets(buckets) {
     const counts = buckets.map(bucket => bucket.doc_count)
     const range = [
-      '#bc3754',
+      '#8cc857',
       '#fcffa4',
     ]
 
