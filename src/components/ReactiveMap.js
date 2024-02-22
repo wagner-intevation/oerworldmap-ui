@@ -398,6 +398,7 @@ class Map extends React.Component {
   }
 
   getPointsAtMouseEvent(event) {
+    if (!this.pointsGeojson) return []
     this.pointsGeojson.eachLayer((layer) => {
       const distances = []
       const geoObjects = this.getGeoObjects(layer.feature.properties.location)
