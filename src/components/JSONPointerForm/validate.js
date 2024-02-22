@@ -2,12 +2,10 @@ import Ajv from 'ajv'
 
 const validate = (schema) => {
   const ajv = new Ajv({
-    schemaId: 'id',
     allErrors: true,
-    jsonPointers: true,
     removeAdditional: true,
   })
-  ajv.addMetaSchema(require('ajv/lib/refs/json-schema-draft-04.json'))
+  ajv.addMetaSchema(require('ajv-draft-04/dist/refs/json-schema-draft-04.json'))
   return ajv.compile(schema)
 }
 
