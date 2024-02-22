@@ -49,6 +49,8 @@ class Header extends React.Component {
   }
 
   componentDidMount() {
+    document.getElementById('initial-loading-background').remove();
+    document.getElementById('initial-loading-spinner').remove();
     const { emitter } = this.props
     document.addEventListener('click', this.handleClick)
 

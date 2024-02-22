@@ -19,6 +19,38 @@
     box-shadow: 0 6px 0 0 #fff;
     animation: uil-ring-anim 1s linear infinite;
   }
+
+  & h1 {
+    animation: fade-in 0.75s ease-in;
+    animation-iteration-count: 1;
+  }
+}
+
+.Loading.fullscreen {
+  background-color: white;
+
+  & .loadingCircle {
+    content: "";
+    width: 90px;
+    height: 90px;
+    border-radius: 999px;
+    box-shadow: 0 6px 0 0 #0f578a;
+    animation: uil-ring-anim 1s linear infinite;
+  }
+}
+
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+
+  40% {
+    opacity: 0.1;
+  }
+
+  100% {
+    opacity: 1;
+  }
 }
 
 @keyframes uil-ring-anim {

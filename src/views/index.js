@@ -42,6 +42,11 @@ export default ({
       </head>
       <body>
         <div id="root">${body}</div>
+        <div id="initial-loading-background" style="z-index: 998;" class="Loading fullscreen"></div>
+        <div id="initial-loading-spinner" class="Loading fullscreen">
+          <h1>OER World Map</h1>
+          <div class="loadingCircle"></div>
+        <div>
         ${piwikEmbed}
       </body>
     </html>
