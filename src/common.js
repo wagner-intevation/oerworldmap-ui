@@ -200,6 +200,8 @@ export const updateUser = async () => {
 
 export const types = ['Organization', 'Service', 'Person', 'Action', 'Event', 'Article', 'Product', 'WebPage', 'Policy', 'Collection']
 
+export const quickSearchTypes = ['Service', 'Product', 'Event', 'Action', 'Organization', 'Person', 'Policy']
+
 export const isNode = () => (typeof window === 'undefined')
 
 export const urlParser = (str) => {
@@ -231,6 +233,7 @@ export default {
   emptyGeometry,
   updateUser,
   types,
+  quickSearchTypes,
   isNode,
   urlParser,
 }

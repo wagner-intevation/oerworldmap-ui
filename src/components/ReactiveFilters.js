@@ -14,7 +14,7 @@ import {
   ToggleButton,
 } from '@appbaseio/reactivesearch'
 
-import { types, isNode } from '../common'
+import { quickSearchTypes, types, isNode } from '../common'
 import withI18n from './withI18n'
 import withEmitter from './withEmitter'
 import withConfig from './withConfig'
@@ -347,7 +347,7 @@ const ReactiveFilters = ({
               className="typeButtons"
               dataField="about.@type"
               multiSelect={false}
-              data={types.map(type => ({
+              data={quickSearchTypes.map(type => ({
                 label: translate(type),
                 value: type,
               }))}
