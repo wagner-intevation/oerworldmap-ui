@@ -76,9 +76,8 @@ const baseConfig = {
   },
   output: {
     path: path.join(__dirname, directory),
-    publicPath: !isProduction ? `https://${process.env.SERVER_HOST}:${process.env.SERVER_PORT}/`
-      : `${process.env.API_SCHEME}://${process.env.API_HOST}`
-        .concat(process.env.API_PORT ? `:${process.env.API_PORT}/` : '/'),
+    publicPath: `${process.env.PUBLIC_SCHEME}://${process.env.PUBLIC_HOST}`
+        .concat(process.env.PUBLIC_PORT ? `:${process.env.PUBLIC_PORT}/` : '/'),
     assetModuleFilename: 'public/[hash][ext][query]'
   },
   plugins: [

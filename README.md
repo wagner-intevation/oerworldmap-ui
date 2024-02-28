@@ -22,17 +22,27 @@ $ npm install
 Set up environment:
 ```
 $ cp .env.example .env
+```
 Open .env in the editor of your choice and configure as follows:
-
+```
+# node binds on this
 SERVER_HOST=localhost
 SERVER_PORT=3000
+# Reachable by the browser, used as publicPath for assets
+PUBLIC_HOST=worldmap.example
+PUBLIC_PORT=
+PUBLIC_SCHEME=https
+# for the minimap
 MAPBOX_ACCESS_TOKEN=your.mapbox.access.token
 MAPBOX_STYLE=username/style_id
-API_HOST=https://oerworldmap.org
+API_HOST=worldmap.example
 API_PORT=443
-API_SCHEME=http
+API_SCHEME=https
 PIWIK_ID=your.piwik.id
 PIWIK_URL=your.piwik.url
+# as reachable by the browser
+ELASTICSEARCH_INDEX=
+ELASTICSEARCH_URL=
 ```
 
 Check if all is well and run:
