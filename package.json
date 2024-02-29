@@ -37,6 +37,7 @@
     "@babel/preset-env": "^7.12.8",
     "@babel/preset-react": "^7.8.3",
     "@babel/preset-typescript": "^7.23.3",
+    "@csstools/postcss-global-data": "^2.1.1",
     "@storybook/addon-a11y": "^7.5.3",
     "@storybook/addon-actions": "^7.5.3",
     "@storybook/addon-controls": "^7.5.3",
