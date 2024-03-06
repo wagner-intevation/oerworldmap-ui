@@ -238,84 +238,6 @@ const createPolicyRelated = (() => {
   return { init }
 })()
 
-const createBlogPost = (() => {
-  const init = async () => {
-    const blogPostContainer = document.querySelector('[data-inject-blog-posts]')
-
-    if (blogPostContainer) {
-      try {
-        const rawResponse = await fetch('https://blog.oerworldmap.org/feed/', {
-          headers: {
-            accept: 'application/rss+xml',
-          },
-        })
-
-        const content = await rawResponse.text()
-        const parser = new DOMParser()
-        const rss = parser.parseFromString(content, 'text/xml')
-
-        const items = [...rss.querySelectorAll('item')].slice(0, 3).map(item => ({
-          title: item.querySelector('title').innerHTML,
-          description: item.querySelector('description').innerHTML,
-          category: item.querySelector('category').innerHTML,
-          pubDate: item.querySelector('pubDate').innerHTML,
-          link: item.querySelector('link').innerHTML,
-          creator: item.getElementsByTagName('dc:creator')[0].innerHTML,
-          thumbnail: ([...item.getElementsByTagName('media:thumbnail')].length > 0) && item.getElementsByTagName('media:thumbnail')[0].getAttribute('url'),
-        }))
-
-        blogPostsRoot.render(
-          <section className="explanation sectionLanding">
-            <div className="innerLanding">
-
-              <h2>Our blog</h2>
-
-              <div className="triple">
-
-                {items.map(item => (
-                  <div key={item.link} className="blogColumn">
-                    {item.thumbnail
-                      && <img src={item.thumbnail} alt={item.title} />
-                    }
-                    <h3>{item.title}</h3>
-
-                    <div className="blogMetadata">
-                      <span>{item.creator.replace('<![CDATA[', '').replace(']]>', '') }</span>
-                      <span>{new Date(item.pubDate).toLocaleDateString()}</span>
-                      {(item.category.replace('<![CDATA[', '').replace(']]>', '') !== 'Uncategorized') && (
-                        <span>{item.category.replace('<![CDATA[', '').replace(']]>', '') }</span>
-                      )}
-                    </div>
-
-                    <p dangerouslySetInnerHTML={{ __html: item.description.replace('<![CDATA[', '').replace(']]>', '') }} />
-                  </div>
-                ))}
-
-              </div>
-
-              <div className="center">
-                <a
-                  href="https://blog.oerworldmap.org/"
-                  className="btnLanding"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  All blog posts
-                </a>
-              </div>
-
-            </div>
-          </section>
-        )
-      } catch (error) {
-        console.log(error)
-      }
-    }
-  }
-
-  return { init }
-})()
-
 const animateMap = (() => {
   const init = async () => {
     const isLanding = document.querySelector('.landing')
@@ -349,7 +271,6 @@ $(async () => {
   createPoliciesFeed.init()
   createPolicyRelated.init()
   hideUserLoginButtons.init()
-  createBlogPost.init()
   animateMap.init()
 
   $('[data-slick]').slick()
