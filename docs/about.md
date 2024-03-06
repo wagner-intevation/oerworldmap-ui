@@ -1,5 +1,7 @@
 ---
 title: About
+layout: page
+class: text
 ---
 
 ## About the OER World Map

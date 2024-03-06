@@ -1,5 +1,7 @@
 ---
 title: Contribute
+layout: page
+class: text
 ---
 
 ## Raise awareness

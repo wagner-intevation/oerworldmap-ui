@@ -2671,13 +2671,25 @@ a:focus .hidden-hover-focus,a:hover .hidden-hover-focus {
     }
 }
 
-.static .faq h1 {
+.static .faq h1, .static .text h1, .static .text h2 {
     max-width:1188px;
     max-width:calc(var(--inner-width) + 2*var(--static-padding));
     padding-bottom:1.5rem;
     border-bottom:1px solid #75bdf0;
     border-bottom:1px solid var(--blue-light);
     margin:65px auto 0;
+}
+
+.static .text {
+    p, ul, h3, h4, h5, h6 {
+        max-width:1188px;
+        max-width:calc(var(--inner-width) + 2*var(--static-padding));
+        position:relative;
+        margin:5px auto 0;
+    }
+    h3 {
+        margin:0.5rem auto 0;
+    }
 }
 
 .static .faq #newsletter {
