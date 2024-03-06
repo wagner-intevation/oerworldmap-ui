@@ -10,7 +10,7 @@ The user interface for https://oerworldmap.org/
 
 Clone this repository:
 ```
-$ git clone https://github.com/hbz/oerworldmap-ui.git
+$ git clone https://gitlab.com/oer-world-map/oerworldmap-ui.git
 $ cd oerworldmap-ui
 ```
 

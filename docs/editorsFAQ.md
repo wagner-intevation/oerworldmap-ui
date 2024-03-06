@@ -74,7 +74,7 @@ We are using ISCED levels and ISCED based fields of education to describe servic
 The "description" field for organisations, services and projects as well as the "teaser" and "body" field for stories can be formatted using common html tags or markdown syntax.
 
 ## How do I provide feedback to the developing team?
-If you are registered on Github, you can easily provide feedback by opening an issue at https://github.com/hbz/oerworldmap/issues/new. If you prefer contacting us by mail, we invite you to send your request to info [at] oerworldmap[dot]org.
+If you are registered on Github, you can easily provide feedback by opening an issue at https://gitlab.com/oer-world-map/oerworldmap/-/issues/new. If you prefer contacting us by mail, we invite you to send your request to info [at] oerworldmap[dot]org.
 
 ## How can I delete entries?
 At the moment users cannot delete entries. If you created a data set by error and want to delete it, please send us a mail to info [at]oerworldmap[dot]org.

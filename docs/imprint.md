@@ -137,7 +137,3 @@ In some cases, a different license may be applied. In those cases we ask to ensu
 - For example in the case for content provided in our “Stories”-section, it is possible to reuse works published under other licenses, provided the conditions of these licenses are met.
 - The fonts used on this website, namely "Font Awesome" by Dave Gandy, http://fontawesome.io, "SourceSansPro-Regular" by Paul D. Hunt, and "Economica-Regular" by Vicente Lamónaca are licensed under the SIL OPEN FONT LICENSE Version 1.1 - 26 February 2007, cf. http://scripts.sil.org/OFL_web.
 - The maps used on this website are partly provided by Mapbox Inc. For the respective license terms see especially: https://www.mapbox.com/about/maps/ and https://www.mapbox.com/tos/ as well as the attribution provided on each map.
-
-<h2 id="versions">5. Versions</h2>
-
-This is the third version of our Privacy Policy and Terms of service (version 3.0) as of May 2nd 2017. The previous versions  can be found [here](https://github.com/hbz/oerworldmap/blob/446369a86a846347bdc1f338b6ed5324027e5c52/public/pages/Imprint.md) (2.0) and [here](https://github.com/hbz/oerworldmap/blob/e14aa22df3ebecd6f659f63e0f5e3e991a3aef8e/public/pages/Imprint.md) (1.0).

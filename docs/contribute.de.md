@@ -48,12 +48,12 @@ Vorhandene OER Daten können über die API der OER World Map hochgeladen werden.
 
 ### Fehler melden
 
-Bitte melden Sie uns technische Fehler. Wenn Sie auf [GitHub](https://github.com/hbz/oerworldmap) registriert sind, können Sie direkt ein Ticket anlegen, andernfalls schreiben Sie uns an [oerinfo@dipf.de](mailto:oerinfo@dipf.de).
+Bitte melden Sie uns technische Fehler. Wenn Sie auf [Gitlab](https://gitlab.com/oer-world-map/oerworldmap/) registriert sind, können Sie direkt ein Ticket anlegen, andernfalls schreiben Sie uns an [oerinfo@dipf.de](mailto:oerinfo@dipf.de).
 
 ### Neue Funktionen vorschlagen
 
-Die OER World Map wird agil entwickelt. Das bedeutet, dass Sie sich an der Entwicklung beteiligen können, indem Sie neue Funktionen vorschlagen. Wir sammeln Vorschläge für neue Funktionen als [„User storys”](https://github.com/hbz/oerworldmap/labels/story) auf GitHub. Wenn Sie eine Funktion vermissen, können Sie ein neues Ticket auf Github anlegen oder uns eine Mail an [oerinfo@dipf.de](mailto:oerinfo@dipf.de) schicken.
+Die OER World Map wird agil entwickelt. Das bedeutet, dass Sie sich an der Entwicklung beteiligen können, indem Sie neue Funktionen vorschlagen. Wenn Sie eine Funktion vermissen, können Sie ein neues Ticket auf Gitlab anlegen oder uns eine Mail an [oerinfo@dipf.de](mailto:oerinfo@dipf.de) schicken.
 
 ### Schreiben Sie Code und Anwendungen für die OER World Map
 
-Die OER World Map ist zu 100% offen, der gesamte Quellcode ist auf GitHub verfügbar. Entwickler können an der Weiterentwicklung des Codes mitarbeiten oder Anwendungen entwickeln, die mit der OER World Map interagieren.
+Die OER World Map ist zu 100% offen, der gesamte Quellcode ist auf Gitlab verfügbar. Entwickler können an der Weiterentwicklung des Codes mitarbeiten oder Anwendungen entwickeln, die mit der OER World Map interagieren.

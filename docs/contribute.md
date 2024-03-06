@@ -41,10 +41,10 @@ The API of the OER World Map can be used to generate and export data with no del
 
 ## Technical input
 ### Report bugs
-Please report any bugs you identify by opening a new ticket if you are registered on [GitHub](https://github.com/hbz/oerworldmap). Otherwise you can send a message to [oerinfo@dipf.de](mailto:oerinfo@dipf.de).
+Please report any bugs you identify by opening a new ticket if you are registered on [Gitlab](https://gitlab.com/oer-world-map/oerworldmap/). Otherwise you can send a message to [oerinfo@dipf.de](mailto:oerinfo@dipf.de).
 
 ### Propose new features
-The OER World Map has been developed using an agile approach. This means that you can contribute to its development by proposing new features. We store new features as [“user stories”](https://github.com/hbz/oerworldmap/labels/story) in our GitHub. If you think something is missing, you can either directly open a new ticket on GitHub or send us a message to [oerinfo@dipf.de](mailto:oerinfo@dipf.de).
+The OER World Map has been developed using an agile approach. This means that you can contribute to its development by proposing new features. We store new features as [“user stories”](https://github.com/hbz/oerworldmap/labels/story) in our Gitlab. If you think something is missing, you can either directly open a new ticket on Gitlab or send us a message to [oerinfo@dipf.de](mailto:oerinfo@dipf.de).
 
 ### Contribute code and new applications
-The OER World Map is 100% open – its complete source code is available on GitHub.  Developers can contribute to the code or even develop applications that interact with the OER World Map.
+The OER World Map is 100% open – its complete source code is available on Gitlab.  Developers can contribute to the code or even develop applications that interact with the OER World Map.

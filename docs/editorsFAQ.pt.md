@@ -70,7 +70,7 @@ The "description" field for organisations, services and projects as well as the 
 
 ## How do I provide feedback to the developing team?
 
-If you are registered on Github, you can easily provide feedback by opening an issue at https://github.com/hbz/oerworldmap/issues/new. If you prefer contacting us by mail, we invite you to send your request to info [at] oerworldmap[dot]org.
+If you are registered on Github, you can easily provide feedback by opening an issue at https://gitlab.com/oer-world-map/oerworldmap/-/issues/new. If you prefer contacting us by mail, we invite you to send your request to info [at] oerworldmap[dot]org.
 
 ## How can I delete entries?
 

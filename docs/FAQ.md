@@ -32,7 +32,7 @@ At the moment, we focus on three main use cases (or "epics"):
 
 In addition to browser access (on desktop and mobile) The OER World Map makes data available to other systems through an Application Programming Interface (API), which will allow other services to reuse our data easily.
 
-Our use - which are used to design the services we provide - cases are collected on [GitHub](https://github.com/hbz/oerworldmap/issues?q=is%3Aopen+is%3Aissue+label%3Astory). If you think anything is missing here, please [contact us](mailto:oerinfo@dipf.de)!
+Our use - which are used to design the services we provide - cases are collected on [GitHub](https://gitlab.com/oer-world-map/oerworldmap/-/issues?q=is%3Aopen+is%3Aissue+label%3Astory). If you think anything is missing here, please [contact us](mailto:oerinfo@dipf.de)!
 
 ## How can I participate?
 The success of the project is dependent on the participation of the OER community.  There are many ways to contribute. The most important ways are:
@@ -93,7 +93,7 @@ The most common OER definitions by UNESCO and by The William and Flora Hewlett F
 
 Nevertheless, since the gratis offerings of today might become the openly licensed services of tomorrow, we don`t think that it makes sense to exclude non-open services dogmatically. Therefore, the OER World Map records and shares services providing material under a variety of licenses, with a minimum requirement that the material must be freely available online (“gratis”).
 
-We do, however, take an active lead in highlighting the special benefits of open licenses. In order to do so, we currently provide search for openly licensed material. We are also working on developing an [openness indicator](https://github.com/hbz/oerworldmap/issues/237), which will be used in the future to visually convey information about the degree of openness of a service at one sight.
+We do, however, take an active lead in highlighting the special benefits of open licenses. In order to do so, we currently provide search for openly licensed material. We are also working on developing an [openness indicator](https://gitlab.com/oer-world-map/oerworldmap/-/issues/237), which will be used in the future to visually convey information about the degree of openness of a service at one sight.
 
 Projects are handled more flexibly than services. Many projects aim at goals related to Open Education in the wider sense and provide results which are valuable to the OER movement, even if they do not provide openly licensed materials. To avoid excluding valuable experiences, we believe that the OER World Map should be open to all projects which believe they make a contribution to the field of Open Education.
 

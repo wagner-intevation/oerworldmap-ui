@@ -28,7 +28,7 @@ Momentan konzentrieren wir uns auf drei Anwendungsfälle (oder "Epics"): - Lehre
 
 Über die Website hinaus macht die OER World Map ihre Daten über eine Programmierschnittstelle (API) zugänglich, die es anderen Services erleichtert die Daten wiederzuverwenden.
 
-Wir sammeln unsere "Use Cases" für die Weiterentwicklung der World Map auf [GitHub](https://github.com/hbz/oerworldmap/issues?q=is%3Aopen+is%3Aissue+label%3Astory). Wenn Sie Ihnen etwas fehlt, [teilen Sie es uns bitte mit](mailto:oerinfo@dipf.de).
+Wir sammeln unsere "Use Cases" für die Weiterentwicklung der World Map auf [GitHub](https://gitlab.com/oer-world-map/oerworldmap/-/issues?q=is%3Aopen+is%3Aissue+label%3Astory). Wenn Sie Ihnen etwas fehlt, [teilen Sie es uns bitte mit](mailto:oerinfo@dipf.de).
 
 ## Wie kann ich mich beteiligen?
 
@@ -95,7 +95,7 @@ Die verbreitetsten OER-Definitionen der UNESCO und der William and Flora Hewlett
 
 Dennoch glauben wir nicht, dass es sinnvoll ist, nicht-offenen Services auszuschließen, denn die Gratis-Angebote von heute können die offen lizensierten Services von Morgen sein. Deshalb werden auf der OER World Map auch Services gezeigt, die Material unter verschiedensten Lizenzen anbieten, solange das Material online frei verfügbar ist ("gratis").
 
-Wir betonen allerdings sehr stark den besonderen Nutzen von freien Lizenzen. So kann bereits jetzt die Suche auf der OER World Map auf offen lizensiertes Material beschränkt werden. Außerdem arbeiten wir daran, einen [Offenheitsindikator](https://github.com/hbz/oerworldmap/issues/237) zu entwickeln, der in Zukunft den Grad der Offenheit von Services auf den ersten Blick sichtbar machen wird.
+Wir betonen allerdings sehr stark den besonderen Nutzen von freien Lizenzen. So kann bereits jetzt die Suche auf der OER World Map auf offen lizensiertes Material beschränkt werden. Außerdem arbeiten wir daran, einen [Offenheitsindikator](https://gitlab.com/oer-world-map/oerworldmap/-/issues/237) zu entwickeln, der in Zukunft den Grad der Offenheit von Services auf den ersten Blick sichtbar machen wird.
 
 Projekte sollten flexibler betrachtet werden als Services. Viele Projekte verfolgen Ziele, die mit Open Education im weiteren Sinne zu tun haben, und liefern Ergebnisse, die wichtig für die OER-Bewegung sind, auch wenn sie kein offen lizensiertes Material veröffentlichen. Da wir keine relevanten Ergebnisse ausschließen wollen, sind wir überzeugt davon, dass die OER World Map offen für alle Projekte sein soll, die glauben zum Bereich der "Open Education" beitragen zu können.
 

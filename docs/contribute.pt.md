@@ -48,12 +48,12 @@ A API do Mapa Global REA pode ser usada para gerar e exportar dados com rapidez.
 
 ### Relate erros
 
-Por favor reporte quaisquer erros que você identifica, abrindo um novo 'ticket', se você está registrado no [ GitHub](https://github.com/hbz/oerworldmap). Alternativamente você pode enviar mensagem para <oerinfo@dipf.de>.
+Por favor reporte quaisquer erros que você identifica, abrindo um novo 'ticket', se você está registrado no [Gitlab](https://gitlab.com/oer-world-map/oerworldmap/). Alternativamente você pode enviar mensagem para <oerinfo@dipf.de>.
 
 ### Proponha novas funcionalidades
 
-O Mapa Global REA foi desenvolvido usando uma abordagem ágil. Isto significa que você pode contribuir para seu desenvolvimento, propondo novas funcionalidades. Nós armazenamos novos recursos como [ "histórias de usuário"](https://github.com/hbz/oerworldmap/labels/story) em nosso GitHub. Se você acha que está faltando alguma coisa, você pode abrir um novo ticket no GitHub ou enviar uma mensagem para <oerinfo@dipf.de>.
+O Mapa Global REA foi desenvolvido usando uma abordagem ágil. Isto significa que você pode contribuir para seu desenvolvimento, propondo novas funcionalidades. Se você acha que está faltando alguma coisa, você pode abrir um novo ticket no Gitlab ou enviar uma mensagem para <oerinfo@dipf.de>.
 
 ### Contribua com código e novas aplicações
 
-O Mapa Global REA é 100% aberto – seu código-fonte completo está disponível no GitHub. Desenvolvedores podem contribuir para o código ou mesmo desenvolver aplicativos que interagem com o Mapa.
+O Mapa Global REA é 100% aberto – seu código-fonte completo está disponível no Gitlab. Desenvolvedores podem contribuir para o código ou mesmo desenvolver aplicativos que interagem com o Mapa.

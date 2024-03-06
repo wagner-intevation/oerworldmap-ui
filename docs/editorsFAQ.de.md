@@ -70,7 +70,7 @@ Die Beschreibungen für Organisationen, Projekte und Services können ebenso wie
 
 ## Wie kann ich dem Entwickler-Team Feedback geben?
 
-Wenn Sie bei Github registriert sind, können Sie Feedback geben, indem sie ein Ticket öffnen unter https://github.com/hbz/oerworldmap/issues/new. Oder Sie schicken uns ihr Feedback an info [at] oerworldmap[dot]org.
+Wenn Sie bei Github registriert sind, können Sie Feedback geben, indem sie ein Ticket öffnen unter https://gitlab.com/oer-world-map/oerworldmap/-/issues/new. Oder Sie schicken uns ihr Feedback an info [at] oerworldmap[dot]org.
 
 ## Wie kann ich Einträge löschen?
 

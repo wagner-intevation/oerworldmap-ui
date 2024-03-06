@@ -28,7 +28,7 @@ Nesse momento, focamos em três casos de uso principal (ou "épicos"): - Os prof
 
 Além do navegador (no desktop e móvel) o Mapa Global REA proporciona acessopara outros sistemas através de um aplicativo Interface de programação (API), que permitirá que outros serviços possam utilizar dos dados com facilidade.
 
-Nossos casos de uso, que são usados para projetar os serviços que prestamos -estão disponíveis no [ GitHub](https://github.com/hbz/oerworldmap/issues?q=is%3Aopen+is%3Aissue+label%3Astory). Se você acha que alguma coisa está faltando por aqui, por favor [ entre em contato conosco](mailto:oerinfo@dipf.de)!
+Nossos casos de uso, que são usados para projetar os serviços que prestamos -estão disponíveis no [ GitHub](https://gitlab.com/oer-world-map/oerworldmap/-/issues?q=is%3Aopen+is%3Aissue+label%3Astory). Se você acha que alguma coisa está faltando por aqui, por favor [ entre em contato conosco](mailto:oerinfo@dipf.de)!
 
 ## Como posso participar?
 
@@ -95,7 +95,7 @@ As definições mais comuns de REA, da UNESCO e da The William e Flora Hewlett F
 
 No entanto, uma vez que as ofertas grátis de hoje podem tornar-se os serviços abertamente licenciados de amanhã, não achamos que faz sentido excluir os serviços não-abertos de maneira dogmática. Portanto, o Mapa Global REA aceita e compartilha serviços fornecendo material sob uma variedade de licenças, com uma exigência mínima de que o material deve ser livremente disponível on-line ('grátis').
 
-Nós, no entanto, temos um papel protagonista em destacar os benefícios especiais de licenças abertas. Para tanto, fornecemos um mecanismo de busca para pesquisa material licenciado abertamente. Estamos também trabalhando no desenvolvimento de um [indicador de abertura](https://github.com/hbz/oerworldmap/issues/237), que será usado no futuro para visualmente transmitir informações sobre o grau de abertura de um serviço de maneira sucinta.
+Nós, no entanto, temos um papel protagonista em destacar os benefícios especiais de licenças abertas. Para tanto, fornecemos um mecanismo de busca para pesquisa material licenciado abertamente. Estamos também trabalhando no desenvolvimento de um [indicador de abertura](https://gitlab.com/oer-world-map/oerworldmap/-/issues/237), que será usado no futuro para visualmente transmitir informações sobre o grau de abertura de um serviço de maneira sucinta.
 
 Projetos são tratados de forma mais flexível do que serviços. Muitos projetos visam objetivos relacionados à Educação Aberta no sentido mais amplo e fornecem resultados que são valiosos para o movimento REA, mesmo se eles não fornecem materiais licenciados abertamente. Para evitar a exclusão de experiências valiosas, acreditamos que o Mapa Global REA deve ser aberto à todos os projetos que acreditam que fazem uma contribuição ao campo da Educação Aberta.
 

@@ -506,7 +506,7 @@ class Header extends React.Component {
                           </a>
                         </li>
                         <li>
-                          <a className="item" href="https://github.com/hbz/oerworldmap" rel="noopener noreferrer" target="_blank">
+                          <a className="item" href="https://gitlab.com/oer-world-map/oerworldmap" rel="noopener noreferrer" target="_blank">
                             {translate('menu.info.social.github')}
                           </a>
                         </li>
