@@ -35,7 +35,7 @@
   "CountryIndex.read.agreeConditions": "I agree to publish the information above under the conditions of <a href=\"/imprint#cc0\" target=\"_blank\">CC0-License</a>. I assure, that I have all rights necessary to publish the information to grant this license.",
   "CountryIndex.read.countryChampion": "Country Champion",
   "CountryIndex.read.regionalChampion": "Regional Champion",
-  "CountryIndex.read.noChampion": "There is no <a href=\"/contribute\">champion</a> for %{country}, yet. <a href=\"mailto:info@oerworldmap.org\">Contact us</a> if you can jump in!",
+  "CountryIndex.read.noChampion": "There is no <a href=\"/contribute\">champion</a> for %{country}, yet. <a href=\"mailto:oerinfo@dipf.de\">Contact us</a> if you can jump in!",
   "CountryIndex.read.statistics": "Statistics",
   "CountryIndex.read.countryReports": "Country reports",
   "CountryIndex.read.entriesShown": "entries found",

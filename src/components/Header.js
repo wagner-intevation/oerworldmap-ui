@@ -518,7 +518,7 @@ class Header extends React.Component {
                           <h3>{translate('menu.info.legal')}</h3>
                         </li>
                         <li>
-                          <a className="item" href="mailto:info@oerworldmap.org">
+                          <a className="item" href="mailto:oerinfo@dipf.de">
                             {translate('menu.info.legal.contact')}
                           </a>
                         </li>

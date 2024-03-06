@@ -28,7 +28,7 @@ Nesse momento, focamos em três casos de uso principal (ou "épicos"): - Os prof
 
 Além do navegador (no desktop e móvel) o Mapa Global REA proporciona acessopara outros sistemas através de um aplicativo Interface de programação (API), que permitirá que outros serviços possam utilizar dos dados com facilidade.
 
-Nossos casos de uso, que são usados para projetar os serviços que prestamos -estão disponíveis no [ GitHub](https://github.com/hbz/oerworldmap/issues?q=is%3Aopen+is%3Aissue+label%3Astory). Se você acha que alguma coisa está faltando por aqui, por favor [ entre em contato conosco](mailto:info@oerworldmap.org)!
+Nossos casos de uso, que são usados para projetar os serviços que prestamos -estão disponíveis no [ GitHub](https://github.com/hbz/oerworldmap/issues?q=is%3Aopen+is%3Aissue+label%3Astory). Se você acha que alguma coisa está faltando por aqui, por favor [ entre em contato conosco](mailto:oerinfo@dipf.de)!
 
 ## Como posso participar?
 
@@ -123,11 +123,11 @@ Sim! Acreditamos que a voz dos alunos muitas vezes não é ouvida nas discussõe
 
 ## O que significa tornar-se um embaixador para um país?
 
-Embaixadores ajudam a mapear o mundo REA por país – coletando dados, garantindo sua qualidade e a sensibilizando sobre o projeto. Confira nosso [ blog post](https://oerworldmap.wordpress.com/2015/04/17/what-does-it-mean-to-become-a-country-champion/) para obter mais informações sobre a rede de embaixadores. O mapa na página inicial mostra onde os embaixadores ainda são necessários. Se você está interessado em agir como embaixador para o seu país, não hesite em [ contactar-nos](mailto:info@oerworldmap.org).
+Embaixadores ajudam a mapear o mundo REA por país – coletando dados, garantindo sua qualidade e a sensibilizando sobre o projeto. Confira nosso [ blog post](https://oerworldmap.wordpress.com/2015/04/17/what-does-it-mean-to-become-a-country-champion/) para obter mais informações sobre a rede de embaixadores. O mapa na página inicial mostra onde os embaixadores ainda são necessários. Se você está interessado em agir como embaixador para o seu país, não hesite em [ contactar-nos](mailto:oerinfo@dipf.de).
 
 ## O Mapa Global REA estará disponível em vários idiomas?
 
-A versão inicial do site está sendo desenvolvida em inglês. No entanto, acreditamos que, a longo prazo, o site deve estar disponível em muitas línguas e o sistema está preparado para apoiar o multilinguismo. No momento a plataforma permite entrada de dados em todos os principais idiomas do mundo e o sistema lhe mostrará dados no idioma escolhido no seu navegador, se disponível. Se você está interessado em traduzir o site para o seu próprio idioma, por favor [ entre em contato conosco](mailto:info@oerworldmap.org).
+A versão inicial do site está sendo desenvolvida em inglês. No entanto, acreditamos que, a longo prazo, o site deve estar disponível em muitas línguas e o sistema está preparado para apoiar o multilinguismo. No momento a plataforma permite entrada de dados em todos os principais idiomas do mundo e o sistema lhe mostrará dados no idioma escolhido no seu navegador, se disponível. Se você está interessado em traduzir o site para o seu próprio idioma, por favor [ entre em contato conosco](mailto:oerinfo@dipf.de).
 
 ## Porque países são exibidos em diferentes tons de verde?
 

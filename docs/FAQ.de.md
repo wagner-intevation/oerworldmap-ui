@@ -28,7 +28,7 @@ Momentan konzentrieren wir uns auf drei Anwendungsfälle (oder "Epics"): - Lehre
 
 Über die Website hinaus macht die OER World Map ihre Daten über eine Programmierschnittstelle (API) zugänglich, die es anderen Services erleichtert die Daten wiederzuverwenden.
 
-Wir sammeln unsere "Use Cases" für die Weiterentwicklung der World Map auf [GitHub](https://github.com/hbz/oerworldmap/issues?q=is%3Aopen+is%3Aissue+label%3Astory). Wenn Sie Ihnen etwas fehlt, [teilen Sie es uns bitte mit](mailto:info@oerworldmap.org).
+Wir sammeln unsere "Use Cases" für die Weiterentwicklung der World Map auf [GitHub](https://github.com/hbz/oerworldmap/issues?q=is%3Aopen+is%3Aissue+label%3Astory). Wenn Sie Ihnen etwas fehlt, [teilen Sie es uns bitte mit](mailto:oerinfo@dipf.de).
 
 ## Wie kann ich mich beteiligen?
 
@@ -123,11 +123,11 @@ Ja, wir wollen auch von Schülern und Studenten hören. Unserer Überzeugung nac
 
 ## Was bedeutet es, Country Champion zu sein?
 
-Die Country Champions helfen dabei, die OER-Welt in ihrem Land zu erfassen: Daten sammeln, die Qualität von Daten sichern und die OER World Map bekannt machen. Lesen Sie auch unseren [Blogartikel](https://oerworldmap.wordpress.com/2015/04/17/what-does-it-mean-to-become-a-country-champion/) dazu. In der Homepage-Ansicht der Worldmap Sehen Sie, wo noch Country Champions fehlen. Wenn Sie Interesse haben, Country Champion für Ihr Land zu werden, zögern Sie nicht, uns eine [Mail](mailto:info@oerworldmap.org) zu schreiben.
+Die Country Champions helfen dabei, die OER-Welt in ihrem Land zu erfassen: Daten sammeln, die Qualität von Daten sichern und die OER World Map bekannt machen. Lesen Sie auch unseren [Blogartikel](https://oerworldmap.wordpress.com/2015/04/17/what-does-it-mean-to-become-a-country-champion/) dazu. In der Homepage-Ansicht der Worldmap Sehen Sie, wo noch Country Champions fehlen. Wenn Sie Interesse haben, Country Champion für Ihr Land zu werden, zögern Sie nicht, uns eine [Mail](mailto:oerinfo@dipf.de) zu schreiben.
 
 ## Wird es die OER World Map in verschiedenen Sprachen geben?
 
-Die Ausgangsversion der Webiste wird in Englisch entwickelt. Wir sind überzeugt, dass auf lange Sicht die Website in vielen Sprachen verfügbar sein sollte, und das System unterstützt Mehrsprachigkeit. Derzeit unterstützt die Plattform bereits die Eingabe von Daten in nahezu allen Sprachen der Welt und das System zeigt Ihnen die Daten in der Sprache, die Sie für Ihren Browser gewählt haben (sofern die Daten in dieser Sprache vorliegen). Wenn Sie Interesse haben die Benutzeroberfläche der Website in ihre Muttersprache zu übersetzen, schreiben Sie uns bitte eine [Mail](mailto:info@oerworldmap.org).
+Die Ausgangsversion der Webiste wird in Englisch entwickelt. Wir sind überzeugt, dass auf lange Sicht die Website in vielen Sprachen verfügbar sein sollte, und das System unterstützt Mehrsprachigkeit. Derzeit unterstützt die Plattform bereits die Eingabe von Daten in nahezu allen Sprachen der Welt und das System zeigt Ihnen die Daten in der Sprache, die Sie für Ihren Browser gewählt haben (sofern die Daten in dieser Sprache vorliegen). Wenn Sie Interesse haben die Benutzeroberfläche der Website in ihre Muttersprache zu übersetzen, schreiben Sie uns bitte eine [Mail](mailto:oerinfo@dipf.de).
 
 ## Warum werden die Länder in verschiedenen Grüntönen dargestellt?
 

@@ -26,7 +26,7 @@ We aim to facilitate exchange of data, information, experiences and ideas betwee
 
 - [Browse through the World Map](https://oerworldmap.org/resource/) and the many excellent projects, people and institutions who care about Open Education as much as we do.
 - [Create a profile](https://oerworldmap.org/auth/realms/oerworldmap/login-actions/registration?client_id=account&tab_id=Xzm_Qs0qD4g) on the World Map and add your own work, events or institution to the World Map to make it even more visible to others.
-- [Get in touch](mailto:info@oerworldmap.org) with us for all kinds of questions, comments and inquiries.
+- [Get in touch](mailto:oerinfo@dipf.de) with us for all kinds of questions, comments and inquiries.
 
 <!-- ## Impressions
 

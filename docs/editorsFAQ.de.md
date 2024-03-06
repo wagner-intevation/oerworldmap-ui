@@ -28,7 +28,7 @@ Um einen bereits vorhandenen Datensatz zu bearbeiten, navigieren Sie zu diesem D
 
 Alle registrierten Nutzer dürfen alle Datentypen für alle Länder anlegen und ändern. Die Country Champions sind nicht auf "ihr" Land beschränkt. Im Gegenteil, wir möchten besonders die Country Champions ermutigen, auch Daten für andere Länder einzugeben, da nicht alle Länder Country Champions haben.
 
-Alle registrierten Nutzer können auch Stories veröffentlichen. Wenn Sie bereits genau wissen, was Sie mit der Community teilen möchten, schreiben Sie Ihre Story direkt. Wir unterstützen Sie aber auch gerne dabei, schreiben einfach an info@oerworldmap.org.
+Alle registrierten Nutzer können auch Stories veröffentlichen. Wenn Sie bereits genau wissen, was Sie mit der Community teilen möchten, schreiben Sie Ihre Story direkt. Wir unterstützen Sie aber auch gerne dabei, schreiben einfach an [oerinfo@dipf.de](mailto:oerinfo@dipf.de).
 
 ## Service, Organisation oder Projekt?
 

@@ -14,7 +14,7 @@ As pessoas precisam saber sobre o Mapa Global REA para que ele possa fornecer um
 
 Desenvolver o Mapa Global REA depende de colaboração. O desenvolvimento será melhor construído por uma rede de Embaixadores que têm ou desejam criar uma visão geral do movimento de REA no seu próprio país. De sua base local eles poderão sensibilizar seus pares, coletar dados e garantir a sua qualidade.
 
-Muitos países ainda não tem um Embaixador. Mais informações sobre o Rede de Embaixadores do Mapa Global REA podem ser encontradas em nosso [ blog](https://oerworldmap.wordpress.com/2015/09/19/how-to-become-part-of-the-oer-world-map-country-champion-network/). Se você ou sua instituição quer participar escreva para <in&#102;o&#64;oerw&#111;&#114;ldma&#112;&#46;org>.
+Muitos países ainda não tem um Embaixador. Mais informações sobre o Rede de Embaixadores do Mapa Global REA podem ser encontradas em nosso [ blog](https://oerworldmap.wordpress.com/2015/09/19/how-to-become-part-of-the-oer-world-map-country-champion-network/). Se você ou sua instituição quer participar escreva para <oerinfo@dipf.de>.
 
 ### Contribua uma história
 
@@ -24,7 +24,7 @@ Um pequeno texto com as lições aprendidas – o que funcionou e o que não fun
 
 ### Traduza as páginas
 
-Para se tornar um recurso verdadeiramente global, páginas do site do Mapa Global REA precisam estar disponível em vários idiomas. Se você pode traduzir páginas da web em sua língua nativa, por favor nos avisem em: <in&#102;o&#64;oerw&#111;&#114;ldma&#112;&#46;org>.
+Para se tornar um recurso verdadeiramente global, páginas do site do Mapa Global REA precisam estar disponível em vários idiomas. Se você pode traduzir páginas da web em sua língua nativa, por favor nos avisem em: <oerinfo@dipf.de>.
 
 * * *
 
@@ -36,11 +36,11 @@ Se você está interessado em coletar dados para o Mapa Global REA, você pode u
 
 ### Upload de dados existentes
 
-Dados existentes sobre REA podem ser enviados para a plataforma usando uma API poderosa. Se você acha que tem informações relevantes para adicionar, por favor contacte-nos em: <in&#102;o&#64;oerw&#111;&#114;ldma&#112;&#46;org>.
+Dados existentes sobre REA podem ser enviados para a plataforma usando uma API poderosa. Se você acha que tem informações relevantes para adicionar, por favor contacte-nos em: <oerinfo@dipf.de>.
 
 ### Exporte dados
 
-A API do Mapa Global REA pode ser usada para gerar e exportar dados com rapidez. Dados completos ou selecionados podem ser usados em outros sites. Uma funcionalidade especial atualmente em desenvolvimento permite a reutilização de dados com apps flexíveis e facilmente integrados ao Mapa. Se você gostaria de reutilizar dados do Mapa Global de REA, por favor contacte-nos em: <in&#102;o&#64;oerw&#111;&#114;ldma&#112;&#46;org>.
+A API do Mapa Global REA pode ser usada para gerar e exportar dados com rapidez. Dados completos ou selecionados podem ser usados em outros sites. Uma funcionalidade especial atualmente em desenvolvimento permite a reutilização de dados com apps flexíveis e facilmente integrados ao Mapa. Se você gostaria de reutilizar dados do Mapa Global de REA, por favor contacte-nos em: <oerinfo@dipf.de>.
 
 * * *
 
@@ -48,11 +48,11 @@ A API do Mapa Global REA pode ser usada para gerar e exportar dados com rapidez.
 
 ### Relate erros
 
-Por favor reporte quaisquer erros que você identifica, abrindo um novo 'ticket', se você está registrado no [ GitHub](https://github.com/hbz/oerworldmap). Alternativamente você pode enviar mensagem para <in&#102;o&#64;oerw&#111;&#114;ldma&#112;&#46;org>.
+Por favor reporte quaisquer erros que você identifica, abrindo um novo 'ticket', se você está registrado no [ GitHub](https://github.com/hbz/oerworldmap). Alternativamente você pode enviar mensagem para <oerinfo@dipf.de>.
 
 ### Proponha novas funcionalidades
 
-O Mapa Global REA foi desenvolvido usando uma abordagem ágil. Isto significa que você pode contribuir para seu desenvolvimento, propondo novas funcionalidades. Nós armazenamos novos recursos como [ "histórias de usuário"](https://github.com/hbz/oerworldmap/labels/story) em nosso GitHub. Se você acha que está faltando alguma coisa, você pode abrir um novo ticket no GitHub ou enviar uma mensagem para <in&#102;o&#64;oerw&#111;&#114;ldma&#112;&#46;org>.
+O Mapa Global REA foi desenvolvido usando uma abordagem ágil. Isto significa que você pode contribuir para seu desenvolvimento, propondo novas funcionalidades. Nós armazenamos novos recursos como [ "histórias de usuário"](https://github.com/hbz/oerworldmap/labels/story) em nosso GitHub. Se você acha que está faltando alguma coisa, você pode abrir um novo ticket no GitHub ou enviar uma mensagem para <oerinfo@dipf.de>.
 
 ### Contribua com código e novas aplicações
 

@@ -102,7 +102,7 @@ const Tour = ({
             &nbsp;
             {translate('Tour.end4')}
             &nbsp;
-            <a href="mailto:info@oerworldmap.org">info@oerworldmap.org</a>
+            <a href="mailto:oerinfo@dipf.de">oerinfo@dipf.de</a>
             .
           </p>
           <p>

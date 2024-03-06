@@ -14,7 +14,7 @@ Möglichst viele Menschen sollen erfahren, dass die OER World Map einen guten Ü
 
 Die OER World Map weiterzuentwickeln ist ein Gemeinschaftswerk. Sie wird von einem Netzwerk von Country Champions aufgebaut bzw. unterstützt, die einen Überblick über die OER-Bewegung in ihrem Land haben oder sich aneignen wollen. Mit ihren lokalen Vernetzungen schaffen die Country Champions Bewusstsein, sammeln Daten und sichern die Qualität der Daten.
 
-Viele Länder haben noch keinen Country Champion. Weitere Informationen über das OER World Map Country Champion Netzwerk finden Sie in unseren [Blog](https://oerworldmap.wordpress.com/2015/09/19/how-to-become-part-of-the-oer-world-map-country-champion-network/). Wenn Sie oder Ihre Institution diese Aufgabe übernehmen könnten, schreiben Sie uns bitte an <in&#102;o&#64;oerw&#111;&#114;ldma&#112;&#46;org>.
+Viele Länder haben noch keinen Country Champion. Weitere Informationen über das OER World Map Country Champion Netzwerk finden Sie in unseren [Blog](https://oerworldmap.wordpress.com/2015/09/19/how-to-become-part-of-the-oer-world-map-country-champion-network/). Wenn Sie oder Ihre Institution diese Aufgabe übernehmen könnten, schreiben Sie uns bitte an <oerinfo@dipf.de>.
 
 ### Teilen Sie Ihre OER-Story
 
@@ -24,7 +24,7 @@ Ein kurzer Text darüber, was Sie gelernt haben - was funktioniert hat und was n
 
 ### Übersetzen Sie die Website
 
-Um wirklich global genutzt werden zu können, muss die OER World Map in vielen Sprachen verfügbar sein. Wenn Sie die OER World Map in Ihre Muttersprache übersetzen können, nehmen Sie bitte über <in&#102;o&#64;oerw&#111;&#114;ldma&#112;&#46;org> Kontakt mit uns auf.
+Um wirklich global genutzt werden zu können, muss die OER World Map in vielen Sprachen verfügbar sein. Wenn Sie die OER World Map in Ihre Muttersprache übersetzen können, nehmen Sie bitte über <oerinfo@dipf.de> Kontakt mit uns auf.
 
 * * *
 
@@ -36,11 +36,11 @@ Wenn Sie Daten für die OER World Map sammeln möchten, können Sie diese direkt
 
 ### Bereits gesammelte Daten auf die OER World Map hochladen
 
-Vorhandene OER Daten können über die API der OER World Map hochgeladen werden. Wenn Sie bereits gesammelte Informationen haben, nehmen Sie bitte über [info@oerworldmap.org](mailto:in&#102;o&#64;oerw&#111;&#114;ldma&#112;&#46;org) mit uns Kontakt auf.
+Vorhandene OER Daten können über die API der OER World Map hochgeladen werden. Wenn Sie bereits gesammelte Informationen haben, nehmen Sie bitte über [oerinfo@dipf.de](mailto:oerinfo@dipf.de) mit uns Kontakt auf.
 
 ### Daten exportieren
 
-Über die API der OER World Map können Daten direkt exportiert werden. Die gesamten Daten oder ein herausgefilterter Datensatz können auf anderen Websites verwendet werden. Wir arbeiten daran, Tools zu entwickeln, mit denen die Weiterverwendung der Daten einfach und flexibel ermöglicht wird. Wenn Sie Daten von der OER World Map weiterverwenden wollen, wenden Sie sich bitte per Mail über [info@oerworldmap.org](mailto:in&#102;o&#64;oerw&#111;&#114;ldma&#112;&#46;org) an uns.
+Über die API der OER World Map können Daten direkt exportiert werden. Die gesamten Daten oder ein herausgefilterter Datensatz können auf anderen Websites verwendet werden. Wir arbeiten daran, Tools zu entwickeln, mit denen die Weiterverwendung der Daten einfach und flexibel ermöglicht wird. Wenn Sie Daten von der OER World Map weiterverwenden wollen, wenden Sie sich bitte per Mail über [oerinfo@dipf.de](mailto:oerinfo@dipf.de) an uns.
 
 * * *
 
@@ -48,11 +48,11 @@ Vorhandene OER Daten können über die API der OER World Map hochgeladen werden.
 
 ### Fehler melden
 
-Bitte melden Sie uns technische Fehler. Wenn Sie auf [GitHub](https://github.com/hbz/oerworldmap) registriert sind, können Sie direkt ein Ticket anlegen, andernfalls schreiben Sie uns an [info@oerworldmap.org](mailto:in&#102;o&#64;oerw&#111;&#114;ldma&#112;&#46;org).
+Bitte melden Sie uns technische Fehler. Wenn Sie auf [GitHub](https://github.com/hbz/oerworldmap) registriert sind, können Sie direkt ein Ticket anlegen, andernfalls schreiben Sie uns an [oerinfo@dipf.de](mailto:oerinfo@dipf.de).
 
 ### Neue Funktionen vorschlagen
 
-Die OER World Map wird agil entwickelt. Das bedeutet, dass Sie sich an der Entwicklung beteiligen können, indem Sie neue Funktionen vorschlagen. Wir sammeln Vorschläge für neue Funktionen als [„User storys”](https://github.com/hbz/oerworldmap/labels/story) auf GitHub. Wenn Sie eine Funktion vermissen, können Sie ein neues Ticket auf Github anlegen oder uns eine Mail an [info@oerworldmap.org](mailto:in&#102;o&#64;oerw&#111;&#114;ldma&#112;&#46;org) schicken.
+Die OER World Map wird agil entwickelt. Das bedeutet, dass Sie sich an der Entwicklung beteiligen können, indem Sie neue Funktionen vorschlagen. Wir sammeln Vorschläge für neue Funktionen als [„User storys”](https://github.com/hbz/oerworldmap/labels/story) auf GitHub. Wenn Sie eine Funktion vermissen, können Sie ein neues Ticket auf Github anlegen oder uns eine Mail an [oerinfo@dipf.de](mailto:oerinfo@dipf.de) schicken.
 
 ### Schreiben Sie Code und Anwendungen für die OER World Map
 
