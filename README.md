@@ -1,10 +1,16 @@
 # oerworldmap-ui
-The user interface for https://oerworldmap.org/
+The user interface for https://gitlab.com/oer-world-map/oerworldmap/
+
+It consists of two parts:
+
+- the static pages, served by jekyll
+- the the UI for the worldmap application, using node
 
 ## Prerequisits
 
 - git
-- Node >=12.16.0
+- Node >= 20.5.1, tested with 20.10.0 on Debian Bullseye
+- jekyll 4.2.0
 
 ## Installation
 
@@ -46,13 +52,20 @@ ELASTICSEARCH_URL=
 ```
 
 Check if all is well and run:
-```
-$ npm test
-$ npm run build:dev
-& npm run server:dev
+```bash
+npm test
+npm run build:dev
+npm run server:dev
 ```
 
-Apache configuration
+## Static pages
+
+
+```
+jekyll serve --watch --incremental
+```
+
+## Apache configuration
 
 Enable modules
 ```
@@ -61,28 +74,9 @@ sudo a2enmod proxy #mod_proxy
 sudo a2enmod proxy_http #mod_proxy_http
 ```
 
-Add new VirtualHost config and enable it
-```
-<VirtualHost *:80>
+Details on the Apache configuration can be found in [OER World Maps' repository](https://gitlab.com/oer-world-map/oerworldmap/).
 
-  ServerName oerworldmap.local
-
-  AllowEncodedSlashes NoDecode
-
-  RewriteEngine On
-
-  RewriteCond %{HTTP:Accept} application/json
-
-  RewriteRule (.*) http://oerworldmap.graphthinking.com$1 [P,L]
-
-  RewriteRule "(/.login|/.logout)" http://oerworldmap.graphthinking.com$1 [P,L]
-
-  RewriteRule (.*) http://localhost:3000$1 [P,L]
-
-</VirtualHost>
-```
-
-Add url to `/etc/hosts`
+Add the local hostname to `/etc/hosts` for easier access in local development environments:
 
 ```
 127.0.0.1 oerworldmap.local
@@ -95,13 +89,13 @@ Visit http://oerworldmap.local/resource/
 
 To run all tests
 
-```
+```bash
 npm test
 ```
 
 To run a single test the description tag of the test must be passed to the npm script
 
-```
+```bash
 npm run singleTest -- "<ActionButtons />"
 ```
 
@@ -109,22 +103,32 @@ npm run singleTest -- "<ActionButtons />"
 
 Statistics are based on Elasticsearch [term aggregations](https://www.elastic.co/guide/en/elasticsearch/reference/6.2/search-aggregations-bucket-terms-aggregation.html). Such an aggregation defines `buckets` which contain the values found in a certain field along with the amount of documents for which the specified field has that value. The field is the only required parameter when using the `/stats` endpoint:
 
-    $ curl https://oerworldmap.org/stats?field=about.location.address.addressCountry
+```bash
+curl https://oerworldmap.local/stats?field=about.location.address.addressCountry
+```
 
 The above will deliver an SVG pie chart with the slices referring to the country of the location of entries on the OER World Map, the size of the slices depending on the amount of entries for the respective country. By default, the ten largest slices are shown. You can override this by setting the `size` parameter:
 
-    $ curl https://oerworldmap.org/stats?field=about.location.address.addressCountry&size=200
+```bash
+curl https://oerworldmap.local/stats?field=about.location.address.addressCountry&size=200
+```
 
 It is possible to limit the entries that are aggregated by providing filter parameters such as those that you will see in the URL when using the filter section in the OER World Map UI. For example, you could aggregate only services by country as follows:
 
-    $ curl https://oerworldmap.org/stats?field=about.location.address.addressCountry&filter.about.@type=%22Service%22
+```bash
+curl https://oerworldmap.local/stats?field=about.location.address.addressCountry&filter.about.@type=%22Service%22
+```
 
 If needed, you can use [Query String Queries](https://www.elastic.co/guide/en/elasticsearch/reference/6.2/query-dsl-query-string-query.html) in the `q` parameter along with or instead of explicit filter parameters. To aggregate all types except services for countries, you could exclude services by using `NOT`:
 
-    $ curl https://oerworldmap.org/stats?field=about.location.address.addressCountry&q=NOT%20about.@type:Service
+```bash
+curl https://oerworldmap.local/stats?field=about.location.address.addressCountry&q=NOT%20about.@type:Service
+```
 
 Finally, you can provide a `subField` parameter to generate stacked bar charts. The following chart shows a bar for each country, the size depending on the total number of entries for each country. Each bar is divided into sections according to the amount of entries for each data type:
 
-    $ curl https://oerworldmap.org/stats?field=about.location.address.addressCountry&subField=about.@type
+```bash
+curl https://oerworldmap.local/stats?field=about.location.address.addressCountry&subField=about.@type
+```
 
 Of course you can also use `filter` and/or `q` parameters with stacked bar charts.

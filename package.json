@@ -1,7 +1,7 @@
 {
   "name": "oerworldmap-ui",
   "version": "0.0.1",
-  "description": "The user interface for https://oerworldmap.org/",
+  "description": "The user interface for https://gitlab.com/oer-world-map/oerworldmap-ui/",
   "scripts": {
     "clean": "rimraf dist/",
     "build:dev": "NODE_ENV=development webpack-cli -w",
