@@ -126,7 +126,7 @@ const Diffs = ({
                 </div>
               ))}
               <noscript>
-                <input type="sumbit" className="btn" />
+                <input type="submit" className="btn" />
               </noscript>
             </form>
           </div>

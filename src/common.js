@@ -37,7 +37,7 @@ export const addParamToURL = (search, key, val) => {
 
   // If the "search" string exists, then build params from it
   if (search) {
-    // Try to replace an existance instance
+    // Try to replace an existing instance
     params = search.replace(new RegExp(`([?&])${key}[^&]*`), `$1${newParam}`)
 
     // If nothing was replaced, then add the new param to the end

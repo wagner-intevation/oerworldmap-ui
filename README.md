@@ -6,7 +6,7 @@ It consists of two parts:
 - the static pages, served by jekyll
 - the the UI for the worldmap application, using node
 
-## Prerequisits
+## Prerequisites
 
 - git
 - Node >= 20.5.1, tested with 20.10.0 on Debian Bullseye
